@@ -92,7 +92,8 @@ class SignupTwoScreen extends GetWidget<SignupTwoController> {
   /// Section Widget
   Widget _buildFullName() {
     return CustomTextFormField(
-      textStyle: TextStyle(color: Colors.black),
+      hintStyle: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
+      textStyle: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
         controller: controller.fullNameController,
         hintText: "lbl_your_full_name".tr,
       
@@ -110,15 +111,28 @@ class SignupTwoScreen extends GetWidget<SignupTwoController> {
 
   /// Section Widget
   Widget _buildYourEmail() {
-    return CustomElevatedButton(
-        text: "lbl_your_email".tr,
-        buttonStyle: CustomButtonStyles.fillOnPrimary,
-        buttonTextStyle: theme.textTheme.bodyLarge!);
+    return CustomTextFormField(
+      hintStyle: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
+      textStyle: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
+        controller: controller.fullNameController,
+        hintText: "lbl_your_email".tr,
+      
+        validator: (value) {
+          if (!isText(value)) {
+            return "err_msg_please_enter_valid_email".tr;
+          }
+          return null;
+        },
+        contentPadding: EdgeInsets.only(left: 30.h, top: 10.v, bottom: 10.v),
+        borderDecoration: TextFormFieldStyleHelper.fillOnPrimary1,
+        filled: true,
+        fillColor: theme.colorScheme.onPrimary.withOpacity(0.44));
   }
-
   /// Section Widget
   Widget _buildPassword() {
     return CustomTextFormField(
+       hintStyle: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
+      textStyle: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
         controller: controller.passwordController,
         hintText: "lbl_password".tr,
         textInputType: TextInputType.visiblePassword,
@@ -132,12 +146,14 @@ class SignupTwoScreen extends GetWidget<SignupTwoController> {
         contentPadding: EdgeInsets.symmetric(horizontal: 30.h, vertical: 13.v),
         borderDecoration: TextFormFieldStyleHelper.fillOnPrimary,
         filled: true,
-        fillColor: theme.colorScheme.onPrimary.withOpacity(1));
+        fillColor: theme.colorScheme.onPrimary.withOpacity(0.44));
   }
 
   /// Section Widget
   Widget _buildConfirmPassword() {
     return CustomTextFormField(
+       hintStyle: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
+      textStyle: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
         controller: controller.confirmPasswordController,
         hintText: "msg_confirm_password".tr,
         textInputAction: TextInputAction.done,
@@ -152,7 +168,7 @@ class SignupTwoScreen extends GetWidget<SignupTwoController> {
         contentPadding: EdgeInsets.symmetric(horizontal: 30.h, vertical: 13.v),
         borderDecoration: TextFormFieldStyleHelper.fillOnPrimary,
         filled: true,
-        fillColor: theme.colorScheme.onPrimary.withOpacity(1));
+        fillColor: theme.colorScheme.onPrimary.withOpacity(0.44));
   }
 
   /// Section Widget

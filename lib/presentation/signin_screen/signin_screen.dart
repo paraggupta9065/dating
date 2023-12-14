@@ -26,7 +26,7 @@ class SigninScreen extends GetWidget<SigninController> {
                         width: double.maxFinite,
                         child: Stack(alignment: Alignment.center, children: [
                           CustomImageView(
-                            fit: BoxFit.cover,
+                              fit: BoxFit.cover,
                               imagePath:
                                   ImageConstant.imgPexelsCottonbro3692748,
                               height: 540.v,
@@ -66,7 +66,8 @@ class SigninScreen extends GetWidget<SigninController> {
                                                     .bodyMediumOnPrimary)),
                                         SizedBox(height: 27.v),
                                         CustomTextFormField(
-                                          textStyle: TextStyle(color: Colors.black),
+                                            textStyle:
+                                                TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
                                             controller:
                                                 controller.userNameController,
                                             hintText: "lbl_username".tr,
@@ -79,18 +80,26 @@ class SigninScreen extends GetWidget<SigninController> {
                                             },
                                             contentPadding:
                                                 EdgeInsets.symmetric(
-                                                    horizontal: 30.h,
+                                                    horizontal: 20.h,
                                                     vertical: 13.v),
                                             borderDecoration:
                                                 TextFormFieldStyleHelper
                                                     .fillOnPrimary,
                                             filled: true,
-                                            fillColor: theme
-                                                .colorScheme.onPrimary
-                                                .withOpacity(1)),
+                                            alignment: Alignment.center,
+                                            hintStyle:
+                                                TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
+                                             
+                                            fillColor:
+                                                theme.colorScheme.onPrimary.withOpacity(0.44)),
                                         SizedBox(height: 16.v),
                                         CustomTextFormField(
-                                          textStyle: TextStyle(color: Colors.black),
+                                            alignment: Alignment.center,
+                                            hintStyle:
+                                                TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
+                                             
+                                            textStyle:
+                                                TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
                                             controller:
                                                 controller.passwordController,
                                             hintText: "lbl_password".tr,
@@ -110,30 +119,28 @@ class SigninScreen extends GetWidget<SigninController> {
                                             obscureText: true,
                                             contentPadding:
                                                 EdgeInsets.symmetric(
-                                                    horizontal: 30.h,
+                                                    horizontal: 20.h,
                                                     vertical: 13.v),
                                             borderDecoration:
                                                 TextFormFieldStyleHelper
                                                     .fillOnPrimary,
                                             filled: true,
-                                            fillColor: theme
-                                                .colorScheme.onPrimary
-                                                .withOpacity(1)),
+                                            fillColor:
+                                                theme.colorScheme.onPrimary.withOpacity(0.44)),
                                         SizedBox(height: 21.v),
                                         GestureDetector(
-                                          onTap: (){
-                                            
-                                          },
+                                          onTap: () {},
                                           child: Text("msg_forget_password".tr,
-                                          
                                               style: CustomTextStyles
                                                   .bodyMediumOnPrimary_2),
                                         ),
                                         SizedBox(height: 17.v),
                                         CustomElevatedButton(
-                                          onPressed: (){
-
-                                          },
+                                            decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(
+                                                        20.v)),
+                                            onPressed: () {},
                                             text: "lbl_continue".tr,
                                             buttonTextStyle: CustomTextStyles
                                                 .bodyMediumGray900),

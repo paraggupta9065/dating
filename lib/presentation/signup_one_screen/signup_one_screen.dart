@@ -94,7 +94,7 @@ class SignupOneScreen extends GetWidget<SignupOneController> {
     return Container(
       
       decoration: BoxDecoration(
-        color: Colors.blue.withOpacity(.5),
+        color: theme.colorScheme.onPrimary.withOpacity(0.44),
         borderRadius: BorderRadius.circular(10)
       ),
         padding: EdgeInsets.symmetric(horizontal: 15.h, vertical: 11.v),
