@@ -71,6 +71,12 @@ class VideoRecordScreen extends GetWidget<VideoRecordController> {
                               child: Row(
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
+                                    IconButton(
+                                        onPressed: () {},
+                                        icon: Icon(Icons.delete,size: 30.v,)),
+                                    SizedBox(
+                                      width:30.h,
+                                    ),
                                     CustomIconButton(
                                         height: 64.adaptSize,
                                         width: 64.adaptSize,
