@@ -63,112 +63,28 @@ class SomeMoreInfoScreen extends GetWidget<SomeMoreInfoController> {
             bottomNavigationBar: _buildNext()));
   }
 
-  /// Section Widget
+ Widget _buildEdit() {
+    return SizedBox(
+        height: 38.v,
+        width: 345.h,
+        child: Stack(alignment: Alignment.topRight, children: [
+         _buildBodyTypeEdit(),
+          Align(
+              alignment: Alignment.topRight,
+              child: Padding(
+                  padding: EdgeInsets.only(top: 2.v, right: 34.h),
+                  child: Text("lbl_body_type".tr,
+                      style: theme.textTheme.titleSmall)))
+        ]));
+  }
+
   Widget _buildBodyTypeEdit() {
     return CustomTextFormField(
         width: 345.h,
         controller: controller.bodyTypeEditController,
         hintText: "lbl_triangle".tr,
-        alignment: Alignment.center,
-        suffix: Container(
-            margin: EdgeInsets.only(left: 9.h, right: 1.h, bottom: 14.v),
-            child: CustomImageView(
-                imagePath: ImageConstant.imgEdit,
-                height: 24.adaptSize,
-                width: 24.adaptSize)),
-        suffixConstraints: BoxConstraints(maxHeight: 38.v),
-        contentPadding: EdgeInsets.only(left: 30.h, top: 3.v, bottom: 3.v));
-  }
-
-  /// Section Widget
-  Widget _buildEdit() {
-    return SizedBox(
-        height: 38.v,
-        width: 345.h,
-        child: Stack(alignment: Alignment.center, children: [
-          Align(
-              alignment: Alignment.topLeft,
-              child: Padding(
-                  padding: EdgeInsets.only(top: 3.v),
-                  child: Text("lbl_body_type".tr,
-                      style: CustomTextStyles.bodyMediumOnPrimaryContainer))),
-          _buildBodyTypeEdit()
-        ]));
-  }
-
-  /// Section Widget
-  Widget _buildExerciseEdit() {
-    return CustomTextFormField(
-        width: 345.h,
-        controller: controller.exerciseEditController,
-        hintText: "lbl_aerobic".tr,
-        alignment: Alignment.center,
-        suffix: Container(
-            margin: EdgeInsets.only(left: 9.h, right: 1.h, bottom: 14.v),
-            child: CustomImageView(
-                imagePath: ImageConstant.imgEdit,
-                height: 24.adaptSize,
-                width: 24.adaptSize)),
-        suffixConstraints: BoxConstraints(maxHeight: 38.v),
-        contentPadding: EdgeInsets.only(left: 30.h, top: 2.v, bottom: 2.v));
-  }
-
-  /// Section Widget
-  Widget _buildEdit1() {
-    return SizedBox(
-        height: 38.v,
-        width: 345.h,
-        child: Stack(alignment: Alignment.center, children: [
-          Align(
-              alignment: Alignment.topLeft,
-              child: Padding(
-                  padding: EdgeInsets.only(top: 1.v),
-                  child: Text("lbl_exercise".tr,
-                      style: CustomTextStyles.bodyMediumOnPrimaryContainer))),
-          _buildExerciseEdit()
-        ]));
-  }
-
-  /// Section Widget
-  Widget _buildKidsEdit() {
-    return CustomTextFormField(
-        width: 345.h,
-        controller: controller.kidsEditController,
-        hintText: "lbl_no_kids".tr,
-        alignment: Alignment.center,
-        suffix: Container(
-            margin: EdgeInsets.only(left: 9.h, right: 1.h, bottom: 14.v),
-            child: CustomImageView(
-                imagePath: ImageConstant.imgEdit,
-                height: 24.adaptSize,
-                width: 24.adaptSize)),
-        suffixConstraints: BoxConstraints(maxHeight: 38.v),
-        contentPadding: EdgeInsets.only(left: 30.h, top: 2.v, bottom: 2.v));
-  }
-
-  /// Section Widget
-  Widget _buildEdit2() {
-    return SizedBox(
-        height: 38.v,
-        width: 345.h,
-        child: Stack(alignment: Alignment.center, children: [
-          Align(
-              alignment: Alignment.topLeft,
-              child: Padding(
-                  padding: EdgeInsets.only(top: 1.v),
-                  child: Text("lbl_kids".tr,
-                      style: CustomTextStyles.bodyMediumOnPrimaryContainer))),
-          _buildKidsEdit()
-        ]));
-  }
-
-  /// Section Widget
-  Widget _buildLifePartnerEdit() {
-    return CustomTextFormField(
-        width: 345.h,
-        controller: controller.lifePartnerEditController,
-        hintText: "msg_relationship_goals".tr,
         hintStyle: CustomTextStyles.bodyMediumOnPrimaryContainer,
+        textStyle: CustomTextStyles.bodyMediumOnPrimaryContainer,
         alignment: Alignment.center,
         suffix: Container(
             margin: EdgeInsets.only(left: 30.h, right: 1.h, bottom: 14.v),
@@ -179,6 +95,93 @@ class SomeMoreInfoScreen extends GetWidget<SomeMoreInfoController> {
         suffixConstraints: BoxConstraints(maxHeight: 38.v));
   }
 
+
+
+   Widget _buildEdit1() {
+    return SizedBox(
+        height: 38.v,
+        width: 345.h,
+        child: Stack(alignment: Alignment.topRight, children: [
+         _buildExerciseEdit(),
+          Align(
+              alignment: Alignment.topRight,
+              child: Padding(
+                  padding: EdgeInsets.only(top: 2.v, right: 34.h),
+                  child: Text("lbl_exercise".tr,
+                      style: theme.textTheme.titleSmall)))
+        ]));
+  }
+
+  Widget _buildExerciseEdit() {
+    return CustomTextFormField(
+        width: 345.h,
+        controller: controller.exerciseEditController,
+        hintText: "lbl_aerobic".tr,
+        hintStyle: CustomTextStyles.bodyMediumOnPrimaryContainer,
+        textStyle: CustomTextStyles.bodyMediumOnPrimaryContainer,
+        alignment: Alignment.center,
+        suffix: Container(
+            margin: EdgeInsets.only(left: 30.h, right: 1.h, bottom: 14.v),
+            child: CustomImageView(
+                imagePath: ImageConstant.imgEdit,
+                height: 24.adaptSize,
+                width: 24.adaptSize)),
+        suffixConstraints: BoxConstraints(maxHeight: 38.v));
+  }
+
+
+
+  Widget _buildEdit2() {
+    return SizedBox(
+        height: 38.v,
+        width: 345.h,
+        child: Stack(alignment: Alignment.topRight, children: [
+         _buildKidsEdit(),
+          Align(
+              alignment: Alignment.topRight,
+              child: Padding(
+                  padding: EdgeInsets.only(top: 2.v, right: 34.h),
+                  child: Text("lbl_no_kids".tr,
+                      style: theme.textTheme.titleSmall)))
+        ]));
+  }
+
+  Widget _buildKidsEdit() {
+    return CustomTextFormField(
+        width: 345.h,
+        controller: controller.kidsEditController,
+        hintText: "lbl_kids".tr,
+        hintStyle: CustomTextStyles.bodyMediumOnPrimaryContainer,
+        textStyle: CustomTextStyles.bodyMediumOnPrimaryContainer,
+        alignment: Alignment.center,
+        suffix: Container(
+            margin: EdgeInsets.only(left: 30.h, right: 1.h, bottom: 14.v),
+            child: CustomImageView(
+                imagePath: ImageConstant.imgEdit,
+                height: 24.adaptSize,
+                width: 24.adaptSize)),
+        suffixConstraints: BoxConstraints(maxHeight: 38.v));
+  }
+ 
+  /// Section Widget
+  /// _buildBodyTypeEdit()
+  Widget _buildLifePartnerEdit() {
+    return CustomTextFormField(
+        width: 345.h,
+        controller: controller.lifePartnerEditController,
+        hintText: "msg_relationship_goals".tr,
+        hintStyle: CustomTextStyles.bodyMediumOnPrimaryContainer,
+        textStyle: CustomTextStyles.bodyMediumOnPrimaryContainer,
+        alignment: Alignment.center,
+        suffix: Container(
+            margin: EdgeInsets.only(left: 30.h, right: 1.h, bottom: 14.v),
+            child: CustomImageView(
+                imagePath: ImageConstant.imgEdit,
+                height: 24.adaptSize,
+                width: 24.adaptSize)),
+        suffixConstraints: BoxConstraints(maxHeight: 38.v));
+  }
+ 
   /// Section Widget
   Widget _buildEdit3() {
     return SizedBox(
@@ -194,7 +197,7 @@ class SomeMoreInfoScreen extends GetWidget<SomeMoreInfoController> {
                       style: theme.textTheme.titleSmall)))
         ]));
   }
-
+  
   /// Section Widget
   Widget _buildCityEdit() {
     return CustomTextFormField(
@@ -202,6 +205,7 @@ class SomeMoreInfoScreen extends GetWidget<SomeMoreInfoController> {
         controller: controller.cityEditController,
         hintText: "lbl_ethnicity".tr,
         hintStyle: CustomTextStyles.bodyMediumOnPrimaryContainer,
+        textStyle: CustomTextStyles.bodyMediumOnPrimaryContainer,
         alignment: Alignment.center,
         suffix: Container(
             margin: EdgeInsets.only(left: 30.h, right: 1.h, bottom: 14.v),
@@ -235,6 +239,7 @@ class SomeMoreInfoScreen extends GetWidget<SomeMoreInfoController> {
         controller: controller.educationEditController,
         hintText: "lbl_religion".tr,
         hintStyle: CustomTextStyles.bodyMediumOnPrimaryContainer,
+        textStyle: CustomTextStyles.bodyMediumOnPrimaryContainer,
         alignment: Alignment.center,
         suffix: Container(
             margin: EdgeInsets.only(left: 30.h, right: 1.h, bottom: 14.v),
@@ -262,51 +267,32 @@ class SomeMoreInfoScreen extends GetWidget<SomeMoreInfoController> {
   }
 
   /// Section Widget
-  Widget _buildEducationRectangle() {
-    return CustomTextFormField(
-        width: 345.h,
-        controller: controller.educationRectangleController,
-        hintText: "lbl_education".tr,
-        hintStyle: CustomTextStyles.bodyMediumOnPrimaryContainer,
-        textInputAction: TextInputAction.done,
-        alignment: Alignment.bottomLeft,
-        suffix: Container(
-            margin: EdgeInsets.only(left: 30.h),
-            decoration:
-                BoxDecoration(borderRadius: BorderRadius.circular(13.h)),
-            child: CustomImageView(
-                imagePath: ImageConstant.imgRectangle17745,
-                height: 27.v,
-                width: 56.h)),
-        suffixConstraints: BoxConstraints(maxHeight: 40.v));
-  }
+ 
 
   /// Section Widget
   Widget _buildRectangle() {
     return Padding(
         padding: EdgeInsets.symmetric(horizontal: 15.h),
         child:
-            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,crossAxisAlignment: CrossAxisAlignment.center, children: [
           Padding(
               padding: EdgeInsets.only(top: 3.v, bottom: 2.v),
-              child: Text("lbl_education".tr,
-                  style: CustomTextStyles.bodyMediumOnPrimaryContainer)),
+              child: 
+              Text("lbl_education".tr,
+                  )
+                  ),
           GestureDetector(
               onTap: () {
                 onTapRectangle();
               },
-              child: SizedBox(
-                  height: 27.v,
-                  width: 56.h,
-                  child: Stack(alignment: Alignment.bottomCenter, children: [
-                    _buildEducationRectangle(),
-                    Align(
-                        alignment: Alignment.bottomCenter,
-                        child: Padding(
-                            padding: EdgeInsets.only(bottom: 3.v),
-                            child: Text("lbl_add".tr,
-                                style: CustomTextStyles.bodySmallGray500)))
-                  ])))
+              child: Container(
+                decoration: BoxDecoration(
+                  border: Border.all(color:  appTheme.gray500),
+                  borderRadius: BorderRadius.circular(15.h)
+                ),
+                  padding: EdgeInsets.symmetric(vertical: 5.v,horizontal: 15.h),
+                  child: Text("lbl_add".tr,
+                      style: CustomTextStyles.bodySmallGray500)))
         ]));
   }
 

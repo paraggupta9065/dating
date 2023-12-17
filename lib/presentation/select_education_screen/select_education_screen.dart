@@ -19,30 +19,37 @@ class SelectEducationScreen extends GetWidget<SelectEducationController> {
       child: Scaffold(
         backgroundColor: appTheme.blueGray20002,
         body: SizedBox(
+          
           height: mediaQueryData.size.height,
           width: double.maxFinite,
           child: Stack(
+            
             alignment: Alignment.bottomCenter,
             children: [
               CustomImageView(
+                // margin:EdgeInsets.only(
+                //     left: 19.h,
+                //     right: 19.h,
+                //   ) ,
                 imagePath: ImageConstant.imgGroup169,
-                height: 470.v,
+                height: 1000.h,
                 width: 375.h,
                 alignment: Alignment.bottomCenter,
               ),
               Align(
                 alignment: Alignment.bottomCenter,
-                child: Padding(
-                  padding: EdgeInsets.only(
-                    left: 19.h,
-                    right: 19.h,
-                    bottom: 25.v,
-                  ),
+                child: Container(
+                   padding: EdgeInsets.only(
+                  left: 19.h,
+                  right: 19.h,
+                  bottom: 15.v,
+                ),
+                  color: Colors.white,
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       _buildSelectEducationRow(),
-                      SizedBox(height: 23.v),
+                      SizedBox(height: 20.v),
                       CustomImageView(
                         imagePath: ImageConstant.imgGroup30958,
                         height: 290.v,

@@ -41,9 +41,11 @@ class YourInterestsScreen extends GetWidget<YourInterestsController> {
                                     child: Padding(
                                         padding: EdgeInsets.symmetric(
                                             horizontal: 14.h),
+                                            
                                         child: Column(
                                             mainAxisSize: MainAxisSize.min,
                                             children: [
+                                              SizedBox(height: 90.h,),
                                               Align(
                                                   alignment:
                                                       Alignment.centerLeft,
@@ -71,6 +73,7 @@ class YourInterestsScreen extends GetWidget<YourInterestsController> {
   /// Section Widget
   PreferredSizeWidget _buildAppBar() {
     return CustomAppBar(
+      backColor: appTheme.gray50,
         height: 56.v,
         leadingWidth: 39.h,
         leading: AppbarLeadingImage(

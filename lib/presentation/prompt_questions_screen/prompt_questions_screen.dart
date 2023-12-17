@@ -15,28 +15,28 @@ class PromptQuestionsScreen extends GetWidget<PromptQuestionsController> {
         child: Scaffold(
             backgroundColor: appTheme.gray50,
             body: SizedBox(
-                height: 768.v,
+                height: 900.v,
                 width: double.maxFinite,
                 child: Stack(alignment: Alignment.topLeft, children: [
                   Align(
                       alignment: Alignment.center,
                       child: Container(
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  image: AssetImage(ImageConstant.imgSplash),
-                                  fit: BoxFit.cover)),
-                          child: Opacity(
-                              opacity: 0.7,
-                              child: CustomImageView(
-                                  imagePath: ImageConstant.imgPattern,
-                                  height: 768.v,
-                                  width: 375.h)))),
+                          width: mediaQueryData.size.width,
+                height: mediaQueryData.size.height,
+                padding: EdgeInsets.only(bottom: 50.v),
+                decoration: BoxDecoration(
+                    color: appTheme.gray50,
+                    image: DecorationImage(
+                        image: AssetImage(ImageConstant.imgGroup41),
+                        fit: BoxFit.cover)),
+                          
+                                  )),
                   CustomImageView(
                       imagePath: ImageConstant.imgArrowLeft,
-                      height: 24.adaptSize,
-                      width: 24.adaptSize,
+                      height: 20.adaptSize,
+                      width: 20.adaptSize,
                       alignment: Alignment.topLeft,
-                      margin: EdgeInsets.only(left: 15.h, top: 6.v),
+                      margin: EdgeInsets.only(left: 15.h, top: 10.v),
                       onTap: () {
                         onTapImgArrowLeft();
                       }),
@@ -46,7 +46,7 @@ class PromptQuestionsScreen extends GetWidget<PromptQuestionsController> {
                           alignment: Alignment.bottomCenter,
                           child: Padding(
                               padding: EdgeInsets.only(
-                                  left: 15.h, right: 15.h, bottom: 30.v),
+                               top: 120.h,   left: 15.h, right: 15.h, bottom: 30.v),
                               child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
