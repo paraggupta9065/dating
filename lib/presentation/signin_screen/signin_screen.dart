@@ -129,7 +129,9 @@ class SigninScreen extends GetWidget<SigninController> {
                                                 theme.colorScheme.onPrimary.withOpacity(0.44)),
                                         SizedBox(height: 21.v),
                                         GestureDetector(
-                                          onTap: () {},
+                                          onTap: () {
+
+                                          },
                                           child: Text("msg_forget_password".tr,
                                               style: CustomTextStyles
                                                   .bodyMediumOnPrimary_2),
@@ -186,6 +188,11 @@ class SigninScreen extends GetWidget<SigninController> {
     );
   }
 
+    onTapForgotPassword() {
+    Get.toNamed(
+      AppRoutes.signupScreen,
+    );
+  }
   /// Navigates to the signupScreen when the action is triggered.
   onTapTxtDoesnthavean() {
     Get.toNamed(
