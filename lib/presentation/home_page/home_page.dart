@@ -1,3 +1,6 @@
+import 'package:tru_dating/presentation/my_preferences_screen/my_preferences_screen.dart';
+import 'package:tru_dating/presentation/search_tab_container_screen/search_tab_container_screen.dart';
+
 import 'controller/home_controller.dart';
 import 'models/home_model.dart';
 import 'package:flutter/material.dart';
@@ -39,13 +42,51 @@ class HomePage extends StatelessWidget {
                                 child: Column(
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
-                                      GestureDetector(
-                                          onTap: () {
-                                            onTapTxtTRU();
-                                          },
-                                          child: Text("lbl_tru".tr,
-                                              style:
-                                                  theme.textTheme.titleLarge)),
+                                      Padding(
+                                        padding: EdgeInsets.only(
+                                            right: 0.h, bottom: 10.v),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            GestureDetector(
+                                              onTap: () {
+                                                print('object');
+                                                onTapSearch();
+                                              },
+                                              child: Icon(
+                                                Icons.search,
+                                                size: 25.h,
+                                                color: Colors.black,
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding:
+                                                  EdgeInsets.only(top: 10.h),
+                                              child: GestureDetector(
+                                                  onTap: () {
+                                                    onTapTxtTRU();
+                                                  },
+                                                  child: Text("lbl_tru".tr,
+                                                      style: theme.textTheme
+                                                          .titleLarge)),
+                                            ),
+                                            GestureDetector(
+                                              onTap: () {
+                                                print('object');
+                                                onTapMenu();
+                                              },
+                                              child: Icon(
+                                                Icons.menu,
+                                                size: 25.h,
+                                                color: Colors.black,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
                                       SizedBox(height: 20.v),
                                       SizedBox(
                                           height: 590.v,
@@ -76,7 +117,7 @@ class HomePage extends StatelessWidget {
                                                             ]))),
                                                 Padding(
                                                     padding: EdgeInsets.only(
-                                                        left: 78.h),
+                                                        left: 77.h),
                                                     child: CustomIconButton(
                                                         height: 60.adaptSize,
                                                         width: 60.adaptSize,
@@ -112,7 +153,8 @@ class HomePage extends StatelessWidget {
                                               ])),
                                       SizedBox(height: 20.v)
                                     ]))),
-                        _buildFashionDesignerStack()
+                        _buildFashionDesignerStack(),
+                        SizedBox(height: 20.v)
                       ])),
                   SizedBox(height: 15.v),
                   Text("lbl_about_me".tr, style: theme.textTheme.labelLarge),
@@ -237,16 +279,23 @@ class HomePage extends StatelessWidget {
               Align(
                   alignment: Alignment.center,
                   child: Container(
-                      margin: EdgeInsets.symmetric(horizontal: 92.h),
+                      height: 120.h,
+                      width: 120.h,
                       padding: EdgeInsets.symmetric(
-                          horizontal: 40.h, vertical: 32.v),
+                          horizontal: 30.h, vertical: 28.v),
                       decoration: AppDecoration.fillBlue5001.copyWith(
                           borderRadius: BorderRadiusStyle.circleBorder68),
                       child: Column(
                           mainAxisSize: MainAxisSize.min,
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            SizedBox(height: 35.v),
+                            Icon(
+                              Icons.shopping_bag_sharp,
+                              color: Colors.blue,
+                            ),
+                            SizedBox(
+                              height: 10.h,
+                            ),
                             SizedBox(
                                 width: 54.h,
                                 child: Text("msg_fashion_designer2".tr,
@@ -256,32 +305,94 @@ class HomePage extends StatelessWidget {
                                     style: CustomTextStyles.labelLargeMedium
                                         .copyWith(height: 1.33)))
                           ]))),
-              _buildOne(
-                  userImage: ImageConstant.imgGroup30970,
-                  userName: "lbl_single".tr),
               Align(
                   alignment: Alignment.topLeft,
                   child: Container(
-                      width: 100.adaptSize,
+                      width: 80.h,
+                      height: 80.h,
                       padding: EdgeInsets.symmetric(
-                          horizontal: 30.h, vertical: 24.v),
+                          horizontal: 10.h, vertical: 14.v),
                       decoration: AppDecoration.fillBlue50.copyWith(
                           borderRadius: BorderRadiusStyle.circleBorder50),
-                      child: Text("lbl_male".tr,
-                          style: CustomTextStyles.labelLargeMedium))),
+                      child: Column(
+                        children: [
+                          Icon(
+                            Icons.male,
+                            color: Colors.blue,
+                          ),
+                          SizedBox(
+                            height: 5.h,
+                          ),
+                          Text("lbl_male".tr,
+                              style: CustomTextStyles.labelLargeMedium),
+                        ],
+                      ))),
+              Align(
+                  alignment: Alignment.topRight,
+                  child: Container(
+                      width: 80.h,
+                      height: 80.h,
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 10.h, vertical: 14.v),
+                      decoration: AppDecoration.fillBlue50.copyWith(
+                          borderRadius: BorderRadiusStyle.circleBorder50),
+                      child: Column(
+                        children: [
+                          Icon(
+                            Icons.monitor_heart,
+                            color: Colors.blue,
+                          ),
+                          SizedBox(
+                            height: 5.h,
+                          ),
+                          Text("lbl_single".tr,
+                              style: CustomTextStyles.labelLargeMedium),
+                        ],
+                      ))),
+              Align(
+                  alignment: Alignment.bottomLeft,
+                  child: Container(
+                      width: 80.h,
+                      height: 80.h,
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 10.h, vertical: 14.v),
+                      decoration: AppDecoration.fillBlue50.copyWith(
+                          borderRadius: BorderRadiusStyle.circleBorder50),
+                      child: Column(
+                        children: [
+                          Icon(
+                            Icons.arrow_downward_rounded,
+                            color: Colors.blue,
+                          ),
+                          SizedBox(
+                            height: 5.h,
+                          ),
+                          Text("lbl_5_7".tr,
+                              style: CustomTextStyles.labelLargeMedium),
+                        ],
+                      ))),
               Align(
                   alignment: Alignment.bottomRight,
                   child: Container(
-                      width: 100.adaptSize,
+                      width: 80.h,
+                      height: 80.h,
                       padding: EdgeInsets.symmetric(
-                          horizontal: 23.h, vertical: 24.v),
+                          horizontal: 10.h, vertical: 14.v),
                       decoration: AppDecoration.fillBlue50.copyWith(
                           borderRadius: BorderRadiusStyle.circleBorder50),
-                      child: Text("lbl_20_years".tr,
-                          style: CustomTextStyles.labelLargeMedium))),
-              _buildOne(
-                  userImage: ImageConstant.imgGroup30971,
-                  userName: "lbl_5_7".tr)
+                      child: Column(
+                        children: [
+                          Icon(
+                            Icons.calendar_month,
+                            color: Colors.blue,
+                          ),
+                          SizedBox(
+                            height: 5.h,
+                          ),
+                          Text("lbl_20_years".tr,
+                              style: CustomTextStyles.labelLargeMedium),
+                        ],
+                      ))),
             ])));
   }
 
@@ -629,30 +740,6 @@ class HomePage extends StatelessWidget {
   }
 
   /// Common widget
-  Widget _buildOne({
-    required String userImage,
-    required String userName,
-  }) {
-    return Container(
-        padding: EdgeInsets.symmetric(horizontal: 39.h, vertical: 24.v),
-        decoration: AppDecoration.fillBlue50
-            .copyWith(borderRadius: BorderRadiusStyle.circleBorder50),
-        child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              CustomImageView(
-                  imagePath: userImage,
-                  height: 21.adaptSize,
-                  width: 21.adaptSize,
-                  alignment: Alignment.center),
-              SizedBox(height: 9.v),
-              Text(userName,
-                  style: CustomTextStyles.labelLargeMedium
-                      .copyWith(color: appTheme.gray900))
-            ]));
-  }
 
   /// Common widget
   Widget _buildReligion({
@@ -695,6 +782,18 @@ class HomePage extends StatelessWidget {
   onTapTxtTRU() {
     Get.toNamed(
       AppRoutes.signinScreen,
+    );
+  }
+
+  onTapSearch() {
+    Get.toNamed(
+      AppRoutes.searchTabContainerScreen,
+    );
+  }
+
+  onTapMenu() {
+    Get.toNamed(
+      AppRoutes.myPreferencesScreen,
     );
   }
 

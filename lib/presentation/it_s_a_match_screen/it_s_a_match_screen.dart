@@ -1,11 +1,30 @@
+import 'package:confetti/confetti.dart';
+
 import 'controller/it_s_a_match_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:tru_dating/core/app_export.dart';
 import 'package:tru_dating/widgets/custom_elevated_button.dart';
 
+// ignore: must_be_immutable
 class ItSAMatchScreen extends GetWidget<ItSAMatchController> {
-  const ItSAMatchScreen({Key? key}) : super(key: key);
+   final ItSAMatchController controller = Get.find<ItSAMatchController>();
+   ItSAMatchScreen({Key? key}) : super(key: key);
 
+  // @override
+  // void initState() {
+  //   super.initState();
+    
+  //   _confettiController = ConfettiController(
+  //     duration: const Duration(seconds: 5),
+  //   );
+  //   _confettiController.play();
+  // }
+
+  // @override
+  // void dispose() {
+  //   _confettiController.dispose();
+  //   super.dispose();
+  // }
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
@@ -44,7 +63,8 @@ class ItSAMatchScreen extends GetWidget<ItSAMatchController> {
                           height: 214.v,
                           width: 240.h,
                           child:
-                              Stack(alignment: Alignment.topRight, children: [
+                              Stack(alignment: Alignment.topRight, fit: StackFit.expand, children: [
+                                
                             CustomImageView(
                                 imagePath: ImageConstant.imgMohamadKhosrav,
                                 height: 132.adaptSize,
@@ -61,18 +81,18 @@ class ItSAMatchScreen extends GetWidget<ItSAMatchController> {
                                     margin:
                                         EdgeInsets.symmetric(horizontal: 38.h),
                                     padding: EdgeInsets.symmetric(
-                                        horizontal: 47.h, vertical: 48.v),
+                                        horizontal: 47.h, vertical: 40.v),
                                     decoration: BoxDecoration(
                                         image: DecorationImage(
-                                            image: AssetImage(
-                                                ImageConstant.imageNotFound),
+                                            image: NetworkImage(
+                                                'https://i.pinimg.com/originals/86/dc/32/86dc329b6bdb53164fbcfea6d0430c79.gif'),
                                             fit: BoxFit.cover)),
                                     child: Column(
                                         mainAxisSize: MainAxisSize.min,
                                         mainAxisAlignment:
                                             MainAxisAlignment.end,
                                         children: [
-                                          SizedBox(height: 42.v),
+                                          SizedBox(height:5.v),
                                           RichText(
                                               text: TextSpan(children: [
                                                 TextSpan(
@@ -85,7 +105,13 @@ class ItSAMatchScreen extends GetWidget<ItSAMatchController> {
                                                         .headlineSmallOnPrimaryRegular)
                                               ]),
                                               textAlign: TextAlign.left)
-                                        ])))
+                                        ]))),
+                                        ConfettiWidget(
+            confettiController: controller.confettiController,
+            blastDirectionality: BlastDirectionality.explosive,
+            shouldLoop: false,
+            colors: const [Colors.blue, Colors.red, Colors.yellow],
+          ),
                           ])),
                       SizedBox(height: 17.v),
                       Text("msg_common_interest".tr,
@@ -267,3 +293,74 @@ class ItSAMatchScreen extends GetWidget<ItSAMatchController> {
     Get.back();
   }
 }
+
+
+// class CelebrationPage extends StatefulWidget {
+//   @override
+//   _CelebrationPageState createState() => _CelebrationPageState();
+// }
+
+// class _CelebrationPageState extends State<CelebrationPage> {
+//   late ConfettiController _confettiController;
+
+//   @override
+//   void initState() {
+//     super.initState();
+    
+//     _confettiController = ConfettiController(
+//       duration: const Duration(seconds: 5),
+//     );
+//     _confettiController.play();
+//   }
+
+//   @override
+//   void dispose() {
+//     _confettiController.dispose();
+//     super.dispose();
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Stack(
+//         fit: StackFit.expand,
+//         children: [
+//           // Background Image
+         
+
+//           // Confetti Animation
+//           ConfettiWidget(
+//             confettiController: _confettiController,
+//             blastDirectionality: BlastDirectionality.explosive,
+//             shouldLoop: false,
+//             colors: const [Colors.blue, Colors.red, Colors.yellow],
+//           ),
+
+//           // Page Content
+//           Center(
+//             child: Column(
+//               mainAxisAlignment: MainAxisAlignment.center,
+//               children: [
+//                 Text(
+//                   'Celebration Time!',
+//                   style: TextStyle(
+//                     fontSize: 24,
+//                     color: Colors.white,
+//                     fontWeight: FontWeight.bold,
+//                   ),
+//                 ),
+//                 SizedBox(height: 16),
+//                 ElevatedButton(
+//                   onPressed: () {
+//                     _confettiController.play();
+//                   },
+//                   child: Text('Celebrate Again!'),
+//                 ),
+//               ],
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }

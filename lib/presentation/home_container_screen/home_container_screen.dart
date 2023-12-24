@@ -1,3 +1,5 @@
+import 'package:tru_dating/presentation/chat_screen/chat_screen.dart';
+
 import 'controller/home_container_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:tru_dating/core/app_export.dart';
@@ -38,6 +40,8 @@ class HomeContainerScreen extends GetWidget<HomeContainerController> {
         return AppRoutes.homePage;
       case BottomBarEnum.Group30912bluegray20001:
         return AppRoutes.matchesPage;
+      case BottomBarEnum.Group169:
+        return AppRoutes.chatScreen;
       case BottomBarEnum.Group30828:
         return AppRoutes.honeyDoePage;
       default:
@@ -52,6 +56,8 @@ class HomeContainerScreen extends GetWidget<HomeContainerController> {
         return HomePage();
       case AppRoutes.matchesPage:
         return MatchesPage();
+      case AppRoutes.chatScreen:
+        return ChatScreen();
       case AppRoutes.honeyDoePage:
         return HoneyDoePage();
       default:

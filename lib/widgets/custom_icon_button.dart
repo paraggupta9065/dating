@@ -72,11 +72,11 @@ extension IconButtonStyleHelper on CustomIconButton {
         boxShadow: [
           BoxShadow(
             color: appTheme.black900.withOpacity(0.15),
-            spreadRadius: 2.h,
-            blurRadius: 2.h,
+            spreadRadius: 1.h,
+            blurRadius: 1.h,
             offset: Offset(
               0,
-              4,
+              2,
             ),
           ),
         ],
@@ -87,11 +87,11 @@ extension IconButtonStyleHelper on CustomIconButton {
         boxShadow: [
           BoxShadow(
             color: appTheme.black900.withOpacity(0.2),
-            spreadRadius: 2.h,
-            blurRadius: 2.h,
+            spreadRadius: 1.h,
+            blurRadius: 1.h,
             offset: Offset(
               0,
-              8,
+              2,
             ),
           ),
         ],

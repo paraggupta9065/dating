@@ -15,88 +15,92 @@ class SignupTwoScreen extends GetWidget<SignupTwoController> {
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
     return SafeArea(
-        child: Scaffold(
-            resizeToAvoidBottomInset: false,
-            body: Form(
-                key: _formKey,
-                child: SizedBox(
-                    width: double.maxFinite,
-                    child: SizedBox(
-                        height: 820.v,
-                        width: double.maxFinite,
-                        child: Stack(alignment: Alignment.center, children: [
-                          CustomImageView(
-                              imagePath:
-                                  ImageConstant.imgPexelsCottonbro3692748,
-                              height: 498.v,
-                              width: 375.h,
-                              alignment: Alignment.topCenter),
-                          Align(
-                              alignment: Alignment.center,
-                              child: Container(
-                                  padding: EdgeInsets.symmetric(
-                                      horizontal: 29.h, vertical: 4.v),
-                                  decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                          image: AssetImage(
-                                              ImageConstant.imgSplash),
-                                          fit: BoxFit.cover)),
-                                  child: Column(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        Text("lbl_tru".tr,
-                                            style:
-                                                theme.textTheme.headlineMedium),
-                                        Spacer(),
-                                        Text("lbl_sign_up".tr,
-                                            style: CustomTextStyles
-                                                .titleLargePoppinsOnPrimary),
-                                        SizedBox(height: 6.v),
-                                        Opacity(
-                                            opacity: 0.7,
-                                            child: Text(
-                                                "msg_join_our_community".tr,
-                                                textAlign: TextAlign.center,
-                                                style: CustomTextStyles
-                                                    .bodyMediumOnPrimary)),
-                                        SizedBox(height: 27.v),
-                                        _buildFullName(),
-                                        SizedBox(height: 16.v),
-                                        _buildYourEmail(),
-                                        SizedBox(height: 16.v),
-                                        _buildPassword(),
-                                        SizedBox(height: 16.v),
-                                        _buildConfirmPassword(),
-                                        SizedBox(height: 30.v),
-                                        _buildContinueButton(),
-                                        SizedBox(height: 31.v),
-                                        RichText(
-                                            text: TextSpan(children: [
-                                              TextSpan(
-                                                  text:
-                                                      "msg_already_have_an2".tr,
-                                                  style: CustomTextStyles
-                                                      .bodyMediumOnPrimary_1),
-                                              TextSpan(text: " "),
-                                              TextSpan(
-                                                  text: "lbl_sign_in".tr,
-                                                  style: CustomTextStyles
-                                                      .titleSmallOnPrimary15_1)
-                                            ]),
-                                            textAlign: TextAlign.left),
-                                        SizedBox(height: 22.v)
-                                      ])))
-                        ]))))));
+      child: Scaffold(
+        resizeToAvoidBottomInset: false,
+        body: Form(
+          key: _formKey,
+          child: SizedBox(
+            width: double.maxFinite,
+            child: SizedBox(
+              height: 820.v,
+              width: double.maxFinite,
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  CustomImageView(
+                      imagePath: ImageConstant.imgPexelsCottonbro3692748,
+                      height: 498.v,
+                      width: 375.h,
+                      alignment: Alignment.topCenter),
+                  Align(
+                    alignment: Alignment.center,
+                    child: Container(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 29.h, vertical: 4.v),
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image: AssetImage(ImageConstant.imgSplash),
+                              fit: BoxFit.cover)),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text("lbl_tru".tr,
+                              style: theme.textTheme.headlineMedium),
+                          Spacer(),
+                          Text("lbl_sign_up".tr,
+                              style:
+                                  CustomTextStyles.titleLargePoppinsOnPrimary),
+                          SizedBox(height: 6.v),
+                          Opacity(
+                              opacity: 0.7,
+                              child: Text("msg_join_our_community".tr,
+                                  textAlign: TextAlign.center,
+                                  style: CustomTextStyles.bodyMediumOnPrimary)),
+                          SizedBox(height: 27.v),
+                          _buildFullName(),
+                          SizedBox(height: 16.v),
+                          _buildYourEmail(),
+                          SizedBox(height: 16.v),
+                          _buildPassword(),
+                          SizedBox(height: 16.v),
+                          _buildConfirmPassword(),
+                          SizedBox(height: 30.v),
+                          _buildContinueButton(),
+                          SizedBox(height: 31.v),
+                          RichText(
+                              text: TextSpan(children: [
+                                TextSpan(
+                                    text: "msg_already_have_an2".tr,
+                                    style:
+                                        CustomTextStyles.bodyMediumOnPrimary_1),
+                                TextSpan(text: " "),
+                                TextSpan(
+                                    text: "lbl_sign_in".tr,
+                                    style: CustomTextStyles
+                                        .titleSmallOnPrimary15_1)
+                              ]),
+                              textAlign: TextAlign.left),
+                          SizedBox(height: 22.v)
+                        ],
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
   }
 
   /// Section Widget
   Widget _buildFullName() {
     return CustomTextFormField(
-      hintStyle: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
-      textStyle: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
+        hintStyle: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
+        textStyle: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
         controller: controller.fullNameController,
         hintText: "lbl_your_full_name".tr,
-      
         validator: (value) {
           if (!isText(value)) {
             return "err_msg_please_enter_valid_text".tr;
@@ -112,11 +116,10 @@ class SignupTwoScreen extends GetWidget<SignupTwoController> {
   /// Section Widget
   Widget _buildYourEmail() {
     return CustomTextFormField(
-      hintStyle: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
-      textStyle: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
+        hintStyle: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
+        textStyle: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
         controller: controller.fullNameController,
         hintText: "lbl_your_email".tr,
-      
         validator: (value) {
           if (!isText(value)) {
             return "err_msg_please_enter_valid_email".tr;
@@ -128,11 +131,12 @@ class SignupTwoScreen extends GetWidget<SignupTwoController> {
         filled: true,
         fillColor: theme.colorScheme.onPrimary.withOpacity(0.44));
   }
+
   /// Section Widget
   Widget _buildPassword() {
     return CustomTextFormField(
-       hintStyle: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
-      textStyle: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
+        hintStyle: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
+        textStyle: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
         controller: controller.passwordController,
         hintText: "lbl_password".tr,
         textInputType: TextInputType.visiblePassword,
@@ -152,8 +156,8 @@ class SignupTwoScreen extends GetWidget<SignupTwoController> {
   /// Section Widget
   Widget _buildConfirmPassword() {
     return CustomTextFormField(
-       hintStyle: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
-      textStyle: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
+        hintStyle: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
+        textStyle: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
         controller: controller.confirmPasswordController,
         hintText: "msg_confirm_password".tr,
         textInputAction: TextInputAction.done,

@@ -16,6 +16,7 @@ dependencies:
   smooth_page_indicator: ^1.0.0+2
   intl: ^0.18.0
   sizer: ^2.0.15
+  confetti: ^0.7.0
 dev_dependencies: 
   flutter_test: 
     sdk: flutter

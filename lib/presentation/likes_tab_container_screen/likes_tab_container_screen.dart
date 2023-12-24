@@ -1,3 +1,5 @@
+import 'package:tru_dating/presentation/chat_screen/chat_screen.dart';
+
 import 'controller/likes_tab_container_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:tru_dating/core/app_export.dart';
@@ -55,7 +57,7 @@ class LikesTabContainerScreen extends GetWidget<LikesTabContainerController> {
             ),
           ),
         ),
-        bottomNavigationBar: _buildBottomBar(),
+        // bottomNavigationBar: _buildBottomBar(),
       ),
     );
   }
@@ -98,39 +100,43 @@ class LikesTabContainerScreen extends GetWidget<LikesTabContainerController> {
   }
 
   /// Section Widget
-  Widget _buildBottomBar() {
-    return CustomBottomBar(
-      onChanged: (BottomBarEnum type) {
-        Get.toNamed(getCurrentRoute(type), id: 1);
-      },
-    );
-  }
+  // Widget _buildBottomBar() {
+  //   return CustomBottomBar(
+  //     onChanged: (BottomBarEnum type) {
+  //       Get.toNamed(getCurrentRoute(type), id: 1);
+  //     },
+  //   );
+  // }
 
-  ///Handling route based on bottom click actions
-  String getCurrentRoute(BottomBarEnum type) {
-    switch (type) {
-      case BottomBarEnum.Group30913:
-        return AppRoutes.homePage;
-      case BottomBarEnum.Group30912bluegray20001:
-        return AppRoutes.matchesPage;
-      case BottomBarEnum.Group30828:
-        return AppRoutes.honeyDoePage;
-      default:
-        return "/";
-    }
-  }
+  // ///Handling route based on bottom click actions
+  // String getCurrentRoute(BottomBarEnum type) {
+  //   switch (type) {
+  //     case BottomBarEnum.Group30913:
+  //       return AppRoutes.homePage;
+  //     case BottomBarEnum.Group30912bluegray20001:
+  //       return AppRoutes.matchesPage;
+  //     case BottomBarEnum.Group169:
+  //       return AppRoutes.chatScreen;
+  //     case BottomBarEnum.Group30828:
+  //       return AppRoutes.honeyDoePage;
+  //     default:
+  //       return "/";
+  //   }
+  // }
 
-  ///Handling page based on route
-  Widget getCurrentPage(String currentRoute) {
-    switch (currentRoute) {
-      case AppRoutes.homePage:
-        return HomePage();
-      case AppRoutes.matchesPage:
-        return MatchesPage();
-      case AppRoutes.honeyDoePage:
-        return HoneyDoePage();
-      default:
-        return DefaultWidget();
-    }
-  }
+  // ///Handling page based on route
+  // Widget getCurrentPage(String currentRoute) {
+  //   switch (currentRoute) {
+  //     case AppRoutes.homePage:
+  //       return HomePage();
+  //     case AppRoutes.matchesPage:
+  //       return MatchesPage();
+  //     case AppRoutes.chatScreen:
+  //       return ChatScreen();
+  //     case AppRoutes.honeyDoePage:
+  //       return HoneyDoePage();
+  //     default:
+  //       return DefaultWidget();
+  //   }
+  // }
 }
