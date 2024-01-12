@@ -3,6 +3,7 @@ import 'models/search_model.dart';
 import 'package:flutter/material.dart' hide SearchController;
 import 'package:tru_dating/core/app_export.dart';
 
+// ignore: must_be_immutable
 class SearchPage extends StatelessWidget {
   SearchPage({Key? key})
       : super(

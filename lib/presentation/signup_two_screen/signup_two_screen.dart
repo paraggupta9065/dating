@@ -19,6 +19,7 @@ class SignupTwoScreen extends GetWidget<SignupTwoController> {
         resizeToAvoidBottomInset: false,
         body: Form(
           key: _formKey,
+          autovalidateMode: AutovalidateMode.onUserInteraction,
           child: SizedBox(
             width: double.maxFinite,
             child: SizedBox(
@@ -67,19 +68,24 @@ class SignupTwoScreen extends GetWidget<SignupTwoController> {
                           SizedBox(height: 30.v),
                           _buildContinueButton(),
                           SizedBox(height: 31.v),
-                          RichText(
-                              text: TextSpan(children: [
-                                TextSpan(
-                                    text: "msg_already_have_an2".tr,
-                                    style:
-                                        CustomTextStyles.bodyMediumOnPrimary_1),
-                                TextSpan(text: " "),
-                                TextSpan(
-                                    text: "lbl_sign_in".tr,
-                                    style: CustomTextStyles
-                                        .titleSmallOnPrimary15_1)
-                              ]),
-                              textAlign: TextAlign.left),
+                          GestureDetector(
+                            onTap: () {
+                              onTapSignIn();
+                            },
+                            child: RichText(
+                                text: TextSpan(children: [
+                                  TextSpan(
+                                      text: "msg_already_have_an2".tr,
+                                      style: CustomTextStyles
+                                          .bodyMediumOnPrimary_1),
+                                  TextSpan(text: " "),
+                                  TextSpan(
+                                      text: "lbl_sign_in".tr,
+                                      style: CustomTextStyles
+                                          .titleSmallOnPrimary15_1)
+                                ]),
+                                textAlign: TextAlign.left),
+                          ),
                           SizedBox(height: 22.v)
                         ],
                       ),
@@ -97,18 +103,19 @@ class SignupTwoScreen extends GetWidget<SignupTwoController> {
   /// Section Widget
   Widget _buildFullName() {
     return CustomTextFormField(
+        key: Key('fullName'),
         hintStyle: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
         textStyle: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
         controller: controller.fullNameController,
         hintText: "lbl_your_full_name".tr,
         validator: (value) {
-          if (!isText(value)) {
+          if (value == null || (!isText(value, isRequired: true))) {
             return "err_msg_please_enter_valid_text".tr;
           }
           return null;
         },
-        contentPadding: EdgeInsets.only(left: 30.h, top: 10.v, bottom: 10.v),
-        borderDecoration: TextFormFieldStyleHelper.fillOnPrimary1,
+        contentPadding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 13.v),
+        borderDecoration: TextFormFieldStyleHelper.fillOnPrimary,
         filled: true,
         fillColor: theme.colorScheme.onPrimary.withOpacity(0.44));
   }
@@ -116,18 +123,19 @@ class SignupTwoScreen extends GetWidget<SignupTwoController> {
   /// Section Widget
   Widget _buildYourEmail() {
     return CustomTextFormField(
+        key: Key('yourEmail'),
         hintStyle: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
         textStyle: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
-        controller: controller.fullNameController,
+        controller: controller.emailController,
         hintText: "lbl_your_email".tr,
         validator: (value) {
-          if (!isText(value)) {
+          if (value == null || (!isText(value, isRequired: true))) {
             return "err_msg_please_enter_valid_email".tr;
           }
           return null;
         },
-        contentPadding: EdgeInsets.only(left: 30.h, top: 10.v, bottom: 10.v),
-        borderDecoration: TextFormFieldStyleHelper.fillOnPrimary1,
+        contentPadding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 13.v),
+        borderDecoration: TextFormFieldStyleHelper.fillOnPrimary,
         filled: true,
         fillColor: theme.colorScheme.onPrimary.withOpacity(0.44));
   }
@@ -135,43 +143,42 @@ class SignupTwoScreen extends GetWidget<SignupTwoController> {
   /// Section Widget
   Widget _buildPassword() {
     return CustomTextFormField(
-        hintStyle: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
-        textStyle: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
+        key: Key('password'),
+        textStyle: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
         controller: controller.passwordController,
         hintText: "lbl_password".tr,
-        textInputType: TextInputType.visiblePassword,
         validator: (value) {
-          if (value == null || (!isValidPassword(value, isRequired: true))) {
+          if (value == null || (!isText(value, isRequired: true))) {
             return "err_msg_please_enter_valid_password".tr;
           }
           return null;
         },
-        obscureText: true,
-        contentPadding: EdgeInsets.symmetric(horizontal: 30.h, vertical: 13.v),
+        contentPadding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 13.v),
         borderDecoration: TextFormFieldStyleHelper.fillOnPrimary,
         filled: true,
+        alignment: Alignment.center,
+        hintStyle: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
         fillColor: theme.colorScheme.onPrimary.withOpacity(0.44));
   }
 
   /// Section Widget
   Widget _buildConfirmPassword() {
     return CustomTextFormField(
-        hintStyle: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
-        textStyle: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
+        key: Key('confirmPassword'),
+        textStyle: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
         controller: controller.confirmPasswordController,
         hintText: "msg_confirm_password".tr,
-        textInputAction: TextInputAction.done,
-        textInputType: TextInputType.visiblePassword,
         validator: (value) {
-          if (value == null || (!isValidPassword(value, isRequired: true))) {
+          if (value == null || (!isText(value, isRequired: true))) {
             return "err_msg_please_enter_valid_password".tr;
           }
           return null;
         },
-        obscureText: true,
-        contentPadding: EdgeInsets.symmetric(horizontal: 30.h, vertical: 13.v),
+        contentPadding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 13.v),
         borderDecoration: TextFormFieldStyleHelper.fillOnPrimary,
         filled: true,
+        alignment: Alignment.center,
+        hintStyle: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
         fillColor: theme.colorScheme.onPrimary.withOpacity(0.44));
   }
 
@@ -181,7 +188,9 @@ class SignupTwoScreen extends GetWidget<SignupTwoController> {
         text: "lbl_continue".tr,
         buttonTextStyle: CustomTextStyles.bodyMediumGray900,
         onPressed: () {
-          onTapContinueButton();
+          if (_formKey.currentState!.validate()) {
+            onTapContinueButton();
+          }
         });
   }
 
@@ -189,6 +198,12 @@ class SignupTwoScreen extends GetWidget<SignupTwoController> {
   onTapContinueButton() {
     Get.toNamed(
       AppRoutes.selectCountryScreen,
+    );
+  }
+
+  onTapSignIn() {
+    Get.toNamed(
+      AppRoutes.signinScreen,
     );
   }
 }
