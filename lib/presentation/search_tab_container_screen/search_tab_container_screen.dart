@@ -30,9 +30,22 @@ class SearchTabContainerScreen extends GetWidget<SearchTabContainerController> {
                     width: double.maxFinite,
                     child: Column(children: [
                       SizedBox(height: 15.v),
+                     
                       _buildTabview(),
+                      SizedBox(height: 15.v),
+
+                       Padding(
+                         padding: const EdgeInsets.all(8.0),
+                         child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text("1500+ Results".tr,style: TextStyle(color: Colors.black))
+                            ,Icon(Icons.menu_sharp,color: Colors.black,size: 25.h,)
+                          ],
+                                             ),
+                       ),
                       SizedBox(
-                          height: 675.v,
                           child: TabBarView(
                               controller: controller.tabviewController,
                               children: [
@@ -51,10 +64,11 @@ class SearchTabContainerScreen extends GetWidget<SearchTabContainerController> {
         leadingWidth: 39.h,
         leading: AppbarLeadingImage(
             imagePath: ImageConstant.imgArrowLeft,
-            margin: EdgeInsets.only(left: 15.h, top: 7.v, bottom: 10.v),
+            margin: EdgeInsets.only(left: 15.h, top: 20.v, bottom: 10.v),
             onTap: () {
               onTapArrowLeft();
             }),
+            
         title: AppbarTitleSearchview(
             margin: EdgeInsets.only(left: 15.h),
             hintText: "lbl_search".tr,
@@ -83,7 +97,7 @@ class SearchTabContainerScreen extends GetWidget<SearchTabContainerController> {
                             alignment: Alignment.center),
                         Align(
                             alignment: Alignment.center,
-                            child: Text("lbl_5_0_to_6_2".tr))
+                            child: Text("lbl_5_0_to_6_2".tr,style: TextStyle(color: Colors.black),))
                       ]))),
               Tab(
                   child: SizedBox(
@@ -101,7 +115,7 @@ class SearchTabContainerScreen extends GetWidget<SearchTabContainerController> {
                             alignment: Alignment.bottomCenter,
                             child: Padding(
                                 padding: EdgeInsets.only(bottom: 8.v),
-                                child: Text("lbl_20_35".tr)))
+                                child: Text("lbl_20_35".tr,style: TextStyle(color: Colors.black),)))
                       ]))),
               Tab(
                   child: SizedBox(
@@ -119,7 +133,7 @@ class SearchTabContainerScreen extends GetWidget<SearchTabContainerController> {
                             alignment: Alignment.bottomCenter,
                             child: Padding(
                                 padding: EdgeInsets.only(bottom: 8.v),
-                                child: Text("lbl_100_miles".tr)))
+                                child: Text("lbl_100_miles".tr,style: TextStyle(color: Colors.black),)))
                       ]))),
               Tab(
                   child: SizedBox(
@@ -137,7 +151,7 @@ class SearchTabContainerScreen extends GetWidget<SearchTabContainerController> {
                             alignment: Alignment.bottomCenter,
                             child: Padding(
                                 padding: EdgeInsets.only(bottom: 8.v),
-                                child: Text("lbl_more".tr)))
+                                child: Text("lbl_more".tr,style: TextStyle(color: Colors.black),)))
                       ])))
             ]));
   }

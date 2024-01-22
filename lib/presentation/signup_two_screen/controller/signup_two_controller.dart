@@ -10,6 +10,7 @@ class SignupTwoController extends GetxController {
   TextEditingController fullNameController = TextEditingController();
 
   TextEditingController passwordController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
 
   TextEditingController confirmPasswordController = TextEditingController();
 
@@ -19,6 +20,7 @@ class SignupTwoController extends GetxController {
   void onClose() {
     super.onClose();
     fullNameController.dispose();
+    emailController.dispose();
     passwordController.dispose();
     confirmPasswordController.dispose();
   }

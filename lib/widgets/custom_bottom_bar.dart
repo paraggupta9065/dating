@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart' as fs;
 import 'package:tru_dating/core/app_export.dart';
 
+// ignore: must_be_immutable
 class CustomBottomBar extends StatelessWidget {
   CustomBottomBar({
     Key? key,
@@ -22,6 +23,11 @@ class CustomBottomBar extends StatelessWidget {
       icon: ImageConstant.imgGroup30912BlueGray20001,
       activeIcon: ImageConstant.imgGroup30912BlueGray20001,
       type: BottomBarEnum.Group30912bluegray20001,
+    ),
+    BottomMenuModel(
+      icon: ImageConstant.imgGroup169,
+      activeIcon: ImageConstant.imgGroup169,
+      type: BottomBarEnum.Group169,
     ),
     BottomMenuModel(
       icon: ImageConstant.imgGroup30828,
@@ -113,7 +119,9 @@ class CustomBottomBar extends StatelessWidget {
 enum BottomBarEnum {
   Group30913,
   Group30912bluegray20001,
+  Group169,
   Group30828,
+  
 }
 
 class BottomMenuModel {

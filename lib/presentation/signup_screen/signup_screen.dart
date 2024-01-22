@@ -60,11 +60,12 @@ class SignupScreen extends GetWidget<SignupController> {
                                         width: 24.adaptSize)),
                                 buttonTextStyle:
                                     CustomTextStyles.bodyMediumGray900,
-                                onPressed: () {
-                                  onTapSignUpWithGmail();
-                                }),
+                                onPressed: () {}),
                             SizedBox(height: 10.v),
                             CustomElevatedButton(
+                                onPressed: () {
+                                  onTapEmail();
+                                },
                                 text: "msg_sign_up_with_email".tr,
                                 leftIcon: Container(
                                     margin: EdgeInsets.only(right: 30.h),
@@ -76,6 +77,9 @@ class SignupScreen extends GetWidget<SignupController> {
                                     CustomTextStyles.bodyMediumGray900),
                             SizedBox(height: 10.v),
                             CustomElevatedButton(
+                                onPressed: () {
+                                  onTapPhoneNumber();
+                                },
                                 text: "msg_sign_up_with_phone".tr,
                                 leftIcon: Container(
                                     margin: EdgeInsets.only(right: 30.h),
@@ -136,9 +140,15 @@ class SignupScreen extends GetWidget<SignupController> {
   }
 
   /// Navigates to the signupOneScreen when the action is triggered.
-  onTapSignUpWithGmail() {
+  onTapPhoneNumber() {
     Get.toNamed(
       AppRoutes.signupOneScreen,
+    );
+  }
+
+  onTapEmail() {
+    Get.toNamed(
+      AppRoutes.signupTwoScreen,
     );
   }
 }

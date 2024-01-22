@@ -1,3 +1,5 @@
+import 'package:tru_dating/presentation/home_container_screen/home_container_screen.dart';
+
 import 'controller/signin_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:tru_dating/core/app_export.dart';
@@ -19,6 +21,7 @@ class SigninScreen extends GetWidget<SigninController> {
             resizeToAvoidBottomInset: false,
             body: Form(
                 key: _formKey,
+                autovalidateMode: AutovalidateMode.onUserInteraction,
                 child: SizedBox(
                     width: double.maxFinite,
                     child: SizedBox(
@@ -26,7 +29,7 @@ class SigninScreen extends GetWidget<SigninController> {
                         width: double.maxFinite,
                         child: Stack(alignment: Alignment.center, children: [
                           CustomImageView(
-                            fit: BoxFit.cover,
+                              fit: BoxFit.cover,
                               imagePath:
                                   ImageConstant.imgPexelsCottonbro3692748,
                               height: 540.v,
@@ -66,12 +69,17 @@ class SigninScreen extends GetWidget<SigninController> {
                                                     .bodyMediumOnPrimary)),
                                         SizedBox(height: 27.v),
                                         CustomTextFormField(
-                                          textStyle: TextStyle(color: Colors.black),
+                                            key: Key('usernameField'),
+                                            textStyle: TextStyle(
+                                                color: Color.fromARGB(
+                                                    255, 255, 255, 255)),
                                             controller:
                                                 controller.userNameController,
                                             hintText: "lbl_username".tr,
                                             validator: (value) {
-                                              if (!isText(value)) {
+                                              if (value == null ||
+                                                  (!isText(value,
+                                                      isRequired: true))) {
                                                 return "err_msg_please_enter_valid_text"
                                                     .tr;
                                               }
@@ -79,25 +87,28 @@ class SigninScreen extends GetWidget<SigninController> {
                                             },
                                             contentPadding:
                                                 EdgeInsets.symmetric(
-                                                    horizontal: 30.h,
+                                                    horizontal: 20.h,
                                                     vertical: 13.v),
                                             borderDecoration:
                                                 TextFormFieldStyleHelper
                                                     .fillOnPrimary,
                                             filled: true,
+                                            alignment: Alignment.center,
+                                            hintStyle: TextStyle(
+                                                color: const Color.fromARGB(
+                                                    255, 255, 255, 255)),
                                             fillColor: theme
                                                 .colorScheme.onPrimary
-                                                .withOpacity(1)),
+                                                .withOpacity(0.44)),
                                         SizedBox(height: 16.v),
                                         CustomTextFormField(
-                                          textStyle: TextStyle(color: Colors.black),
+                                            key: Key('password'),
+                                            textStyle: TextStyle(
+                                                color: Color.fromARGB(
+                                                    255, 255, 255, 255)),
                                             controller:
                                                 controller.passwordController,
                                             hintText: "lbl_password".tr,
-                                            textInputAction:
-                                                TextInputAction.done,
-                                            textInputType:
-                                                TextInputType.visiblePassword,
                                             validator: (value) {
                                               if (value == null ||
                                                   (!isValidPassword(value,
@@ -107,33 +118,79 @@ class SigninScreen extends GetWidget<SigninController> {
                                               }
                                               return null;
                                             },
-                                            obscureText: true,
                                             contentPadding:
                                                 EdgeInsets.symmetric(
-                                                    horizontal: 30.h,
+                                                    horizontal: 20.h,
                                                     vertical: 13.v),
                                             borderDecoration:
                                                 TextFormFieldStyleHelper
                                                     .fillOnPrimary,
                                             filled: true,
+                                            alignment: Alignment.center,
+                                            hintStyle: TextStyle(
+                                                color: const Color.fromARGB(
+                                                    255, 255, 255, 255)),
                                             fillColor: theme
                                                 .colorScheme.onPrimary
-                                                .withOpacity(1)),
+                                                .withOpacity(0.44)),
+                                        // CustomTextFormField(
+                                        //     key: Key('passwordField'),
+                                        //     alignment: Alignment.center,
+                                        //     hintStyle: TextStyle(
+                                        //         color: const Color.fromARGB(
+                                        //             255, 255, 255, 255)),
+                                        //     textStyle: TextStyle(
+                                        //         color: const Color.fromARGB(
+                                        //             255, 255, 255, 255)),
+                                        //     controller:
+                                        //         controller.passwordController,
+                                        //     hintText: "lbl_password".tr,
+                                        //     textInputAction:
+                                        //         TextInputAction.done,
+                                        //     textInputType:
+                                        //         TextInputType.visiblePassword,
+                                        //     validator: (value) {
+                                        //       if (value == null ||
+                                        //           (!isValidPassword(value,
+                                        //               isRequired: true))) {
+                                        //         return "err_msg_please_enter_valid_password"
+                                        //             .tr;
+                                        //       }
+                                        //       return null;
+                                        //     },
+                                        //     obscureText: true,
+                                        //     contentPadding:
+                                        //         EdgeInsets.symmetric(
+                                        //             horizontal: 20.h,
+                                        //             vertical: 13.v),
+                                        //     borderDecoration:
+                                        //         TextFormFieldStyleHelper
+                                        //             .fillOnPrimary,
+                                        //     filled: true,
+                                        //     fillColor: theme
+                                        //         .colorScheme.onPrimary
+                                        //         .withOpacity(0.44)),
                                         SizedBox(height: 21.v),
                                         GestureDetector(
-                                          onTap: (){
-                                            
-                                          },
+                                          onTap: () {},
                                           child: Text("msg_forget_password".tr,
-                                          
                                               style: CustomTextStyles
                                                   .bodyMediumOnPrimary_2),
                                         ),
                                         SizedBox(height: 17.v),
                                         CustomElevatedButton(
-                                          onPressed: (){
-
-                                          },
+                                            decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(
+                                                        20.v)),
+                                            onPressed: () {
+                                              print('helo');
+                                              if (_formKey.currentState!
+                                                  .validate()) {
+                                                print('hel');
+                                                Get.to(HomeContainerScreen());
+                                              }
+                                            },
                                             text: "lbl_continue".tr,
                                             buttonTextStyle: CustomTextStyles
                                                 .bodyMediumGray900),
@@ -176,6 +233,12 @@ class SigninScreen extends GetWidget<SigninController> {
   onTapTxtTRU() {
     Get.toNamed(
       AppRoutes.splashScreen,
+    );
+  }
+
+  onTapForgotPassword() {
+    Get.toNamed(
+      AppRoutes.signupScreen,
     );
   }
 

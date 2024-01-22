@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 /// current selectCountryModelObj
 class SelectCountryController extends GetxController {
   TextEditingController countryController = TextEditingController();
+  TextEditingController cityController = TextEditingController();
 
   Rx<SelectCountryModel> selectCountryModelObj = SelectCountryModel().obs;
 
@@ -15,5 +16,6 @@ class SelectCountryController extends GetxController {
   void onClose() {
     super.onClose();
     countryController.dispose();
+    cityController.dispose();
   }
 }

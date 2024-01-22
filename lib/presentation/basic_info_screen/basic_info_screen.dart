@@ -42,24 +42,27 @@ class BasicInfoScreen extends GetWidget<BasicInfoController> {
                       Divider(color: appTheme.blue10001),
                       SizedBox(height: 19.v),
                       Padding(
-                          padding: EdgeInsets.only(left: 54.h, right: 15.h),
+                           padding: EdgeInsets.symmetric(horizontal: 15.h),
                           child: _buildGender(
+                              userImage: ImageConstant.imgGroup30970,
                               genderLabel: "lbl_name".tr,
                               genderValue: "lbl_honey".tr)),
                       SizedBox(height: 8.v),
                       Divider(indent: 15.h, endIndent: 15.h),
                       SizedBox(height: 9.v),
                       Padding(
-                          padding: EdgeInsets.only(left: 54.h, right: 15.h),
+                           padding: EdgeInsets.symmetric(horizontal: 15.h),
                           child: _buildGender(
+                              userImage: ImageConstant.imgGroup30970,
                               genderLabel: "lbl_gender".tr,
                               genderValue: "lbl_male".tr)),
                       SizedBox(height: 10.v),
                       Divider(indent: 15.h, endIndent: 15.h),
                       SizedBox(height: 9.v),
                       Padding(
-                          padding: EdgeInsets.only(left: 54.h, right: 15.h),
+                           padding: EdgeInsets.symmetric(horizontal: 15.h),
                           child: _buildGender(
+                              userImage: ImageConstant.imgGroup30970,
                               genderLabel: "lbl_profession".tr,
                               genderValue: "msg_fashion_designer".tr)),
                       SizedBox(height: 9.v),
@@ -84,8 +87,9 @@ class BasicInfoScreen extends GetWidget<BasicInfoController> {
                       Divider(indent: 15.h, endIndent: 15.h),
                       SizedBox(height: 9.v),
                       Padding(
-                          padding: EdgeInsets.only(left: 54.h, right: 15.h),
+                           padding: EdgeInsets.symmetric(horizontal: 15.h),
                           child: _buildGender(
+                              userImage: ImageConstant.imgGroup30970,
                               genderLabel: "lbl_age".tr,
                               genderValue: "lbl_20_years".tr)),
                       SizedBox(height: 9.v),
@@ -132,6 +136,7 @@ class BasicInfoScreen extends GetWidget<BasicInfoController> {
 
   /// Common widget
   Widget _buildGender({
+    required String userImage,
     required String genderLabel,
     required String genderValue,
   }) {
@@ -139,8 +144,10 @@ class BasicInfoScreen extends GetWidget<BasicInfoController> {
         mainAxisAlignment: MainAxisAlignment.end,
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
+          CustomImageView(
+          imagePath: userImage, height: 24.adaptSize, width: 24.adaptSize),
           Padding(
-              padding: EdgeInsets.only(top: 4.v),
+              padding: EdgeInsets.only(left: 15.h,top: 4.v),
               child: Text(genderLabel,
                   style: CustomTextStyles.bodySmallOnPrimaryContainer_1
                       .copyWith(color: theme.colorScheme.onPrimaryContainer))),

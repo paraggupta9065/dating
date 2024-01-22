@@ -25,7 +25,8 @@ class MyPreferencesScreen extends GetWidget<MyPreferencesController> {
                     color: theme.colorScheme.onPrimary.withOpacity(1),
                     image: DecorationImage(
                         image: AssetImage(ImageConstant.imgGroup41),
-                        fit: BoxFit.cover)),
+                        fit: BoxFit.cover)
+                    ),
                 child: Container(
                     height: 440.v,
                     width: 335.h,
@@ -35,7 +36,7 @@ class MyPreferencesScreen extends GetWidget<MyPreferencesController> {
                         image: DecorationImage(
                             image: fs.Svg(ImageConstant.imgGroup30628),
                             fit: BoxFit.cover)),
-                    child: Stack(alignment: Alignment.bottomRight, children: [
+                    child: Stack(alignment: Alignment.center, children: [
                       CustomImageView(
                           imagePath: ImageConstant.imgRectangle17745,
                           height: 27.v,

@@ -11,7 +11,6 @@ class ImageConstant {
   static String imgCall = '$imagePath/img_call.svg';
   static String imgMail = '$imagePath/mail.png';
 
-
   // Signup – One images
   static String imgNopath = '$imagePath/img_nopath.png';
 
@@ -197,4 +196,5 @@ class ImageConstant {
   static String imgCloseBlueGray300 = '$imagePath/img_close_blue_gray_300.svg';
 
   static String imageNotFound = 'assets/images/image_not_found.png';
+  static String gifImage = 'assets/images/image_gif';
 }

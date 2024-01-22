@@ -1,7 +1,4 @@
 import 'package:tru_dating/presentation/home_container_screen/home_container_screen.dart';
-import 'package:tru_dating/presentation/home_page/home_page.dart';
-import 'package:tru_dating/presentation/view_my_profile_screen/view_my_profile_screen.dart';
-
 import '../your_interests_screen/widgets/coffee_item_widget.dart';
 import 'controller/your_interests_controller.dart';
 import 'models/coffee_item_model.dart';
@@ -41,9 +38,11 @@ class YourInterestsScreen extends GetWidget<YourInterestsController> {
                                     child: Padding(
                                         padding: EdgeInsets.symmetric(
                                             horizontal: 14.h),
+                                            
                                         child: Column(
                                             mainAxisSize: MainAxisSize.min,
                                             children: [
+                                              SizedBox(height: 90.h,),
                                               Align(
                                                   alignment:
                                                       Alignment.centerLeft,
@@ -71,6 +70,7 @@ class YourInterestsScreen extends GetWidget<YourInterestsController> {
   /// Section Widget
   PreferredSizeWidget _buildAppBar() {
     return CustomAppBar(
+      backColor: appTheme.gray50,
         height: 56.v,
         leadingWidth: 39.h,
         leading: AppbarLeadingImage(

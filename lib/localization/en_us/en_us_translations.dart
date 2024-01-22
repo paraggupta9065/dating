@@ -265,7 +265,7 @@ final Map<String, String> enUs = {
   "lbl_whiskey": "Whiskey",
   "lbl_wine": "Wine",
   "lbl_write_here": "Write here...",
-  "msg_allow_peoples_to": "Allow peoples to see my Intro Video",
+  "msg_allow_peoples_to": "Allow people to see my intro video",
   "msg_already_have_an": "Already have an account? Sign In",
   "msg_already_have_an2": "Already have an account?",
   "msg_christian_hindu": "Christian, Hindu",

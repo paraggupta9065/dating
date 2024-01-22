@@ -19,6 +19,7 @@ class SignupOneScreen extends GetWidget<SignupOneController> {
             resizeToAvoidBottomInset: false,
             body: Form(
                 key: _formKey,
+                autovalidateMode: AutovalidateMode.onUserInteraction,
                 child: SizedBox(
                     width: double.maxFinite,
                     child: SizedBox(
@@ -67,24 +68,33 @@ class SignupOneScreen extends GetWidget<SignupOneController> {
                                             buttonTextStyle: CustomTextStyles
                                                 .bodyMediumGray900,
                                             onPressed: () {
-                                              onTapContinue();
+                                              if (_formKey.currentState!
+                                                  .validate()) {
+                                                print('hel');
+                                                onTapContinue();
+                                              }
                                             }),
                                         Spacer(flex: 49),
                                         SizedBox(height: 22.v),
-                                        RichText(
-                                            text: TextSpan(children: [
-                                              TextSpan(
-                                                  text:
-                                                      "msg_already_have_an2".tr,
-                                                  style: CustomTextStyles
-                                                      .bodyMediumOnPrimary_1),
-                                              TextSpan(text: " "),
-                                              TextSpan(
-                                                  text: "lbl_sign_in".tr,
-                                                  style: CustomTextStyles
-                                                      .titleSmallOnPrimary15_1)
-                                            ]),
-                                            textAlign: TextAlign.left)
+                                        GestureDetector(
+                                          onTap: () {
+                                            onTapSignIn();
+                                          },
+                                          child: RichText(
+                                              text: TextSpan(children: [
+                                                TextSpan(
+                                                    text: "msg_already_have_an2"
+                                                        .tr,
+                                                    style: CustomTextStyles
+                                                        .bodyMediumOnPrimary_1),
+                                                TextSpan(text: " "),
+                                                TextSpan(
+                                                    text: "lbl_sign_in".tr,
+                                                    style: CustomTextStyles
+                                                        .titleSmallOnPrimary15_1)
+                                              ]),
+                                              textAlign: TextAlign.left),
+                                        )
                                       ])))
                         ]))))));
   }
@@ -92,11 +102,9 @@ class SignupOneScreen extends GetWidget<SignupOneController> {
   /// Section Widget
   Widget _buildMobileNumberRow() {
     return Container(
-      
-      decoration: BoxDecoration(
-        color: Colors.blue.withOpacity(.5),
-        borderRadius: BorderRadius.circular(10)
-      ),
+        decoration: BoxDecoration(
+            color: theme.colorScheme.onPrimary.withOpacity(0.44),
+            borderRadius: BorderRadius.circular(10)),
         padding: EdgeInsets.symmetric(horizontal: 15.h, vertical: 11.v),
         child: Row(mainAxisSize: MainAxisSize.min, children: [
           CustomImageView(
@@ -125,7 +133,7 @@ class SignupOneScreen extends GetWidget<SignupOneController> {
           Padding(
               padding: EdgeInsets.only(left: 19.h, top: 1.v),
               child: CustomTextFormField(
-                
+                  key: Key('mobileNumber'),
                   width: 166.h,
                   controller: controller.mobileNumberController,
                   hintText: "msg_enter_mobile_number".tr,
@@ -133,7 +141,7 @@ class SignupOneScreen extends GetWidget<SignupOneController> {
                   textInputAction: TextInputAction.done,
                   textInputType: TextInputType.phone,
                   validator: (value) {
-                    if (!isValidPhone(value)) {
+                    if (value == null || (!isValidPhone(value, isRequired: true))) {
                       return "err_msg_please_enter_valid_phone_number".tr;
                     }
                     return null;
@@ -144,7 +152,13 @@ class SignupOneScreen extends GetWidget<SignupOneController> {
   /// Navigates to the signupTwoScreen when the action is triggered.
   onTapContinue() {
     Get.toNamed(
-      AppRoutes.signupTwoScreen,
+      AppRoutes.selectCountryScreen,
+    );
+  }
+
+  onTapSignIn() {
+    Get.toNamed(
+      AppRoutes.signinScreen,
     );
   }
 }
