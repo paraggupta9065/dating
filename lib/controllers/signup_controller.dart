@@ -1,32 +1,36 @@
 import 'package:get/get.dart';
-import 'package:http/http.dart' as http;
+import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
 
-class SignUpController extends GetxController {
-  final String apiUrl = 'https://tru-dating.vaininnovation.in/api/sign-up';
+class SignupController extends GetxController {
+  var fullNameController = TextEditingController();
+  var emailController = TextEditingController();
+  var passwordController = TextEditingController();
+  var confirmPasswordController = TextEditingController();
 
-  Future<void> signUp(String username, String email, String password) async {
+
+  Future<void> signUp() async {
     try {
-      Map<String, String> data = {
-        'username': username,
-        'email': email,
-        'password': password,
-      };
+      var apiUrl = 'https://tru-dating.vaininnovation.in/api/sign-up';
 
-      // HTTP POST request
-      final response = await http.post(Uri.parse(apiUrl), body: data);
+      var response = await Dio().post(
+        apiUrl,
+        data: {
+          'full_name': fullNameController.text,
+          'email': emailController.text,
+          'password': passwordController.text,
+          'confirm_password': confirmPasswordController.text,
+        },
+      );
 
-      // if the request was successful
+  
       if (response.statusCode == 200) {
-        print('SignUp successful');
-        print(response.body);
+        print('Sign-up successful');
       } else {
-        // errors if the request was not successful
-        print('SignUp failed');
-        print('Status Code: ${response.statusCode}');
-        print('Response Body: ${response.body}');
+        print('Sign-up failed. ${response.statusCode}: ${response.data}');
       }
-    } catch (e) {
-      print('Exception during SignUp: $e');
+    } catch (error) {
+      print('Error during sign-up: $error');
     }
   }
 }

@@ -4,9 +4,12 @@ import 'package:tru_dating/core/app_export.dart';
 import 'package:tru_dating/core/utils/validation_functions.dart';
 import 'package:tru_dating/widgets/custom_elevated_button.dart';
 import 'package:tru_dating/widgets/custom_text_form_field.dart';
+import 'package:tru_dating/controllers/signup_controller.dart';
 
 // ignore_for_file: must_be_immutable
 class SignupTwoScreen extends GetWidget<SignupTwoController> {
+  SignupController signupController = SignupController();
+
   SignupTwoScreen({Key? key}) : super(key: key);
 
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
@@ -189,7 +192,8 @@ class SignupTwoScreen extends GetWidget<SignupTwoController> {
         buttonTextStyle: CustomTextStyles.bodyMediumGray900,
         onPressed: () {
           if (_formKey.currentState!.validate()) {
-            onTapContinueButton();
+            // onTapContinueButton();
+            signupController.signUp();
           }
         });
   }
