@@ -6,9 +6,14 @@ import 'package:tru_dating/core/app_export.dart';
 import 'package:tru_dating/core/utils/validation_functions.dart';
 import 'package:tru_dating/widgets/custom_elevated_button.dart';
 import 'package:tru_dating/widgets/custom_text_form_field.dart';
+import 'package:tru_dating/controllers/signin_controller.dart';  // import signin_controller controller 
 
 // ignore_for_file: must_be_immutable
-class SigninScreen extends GetWidget<SigninController> {
+class SigninScreen extends GetWidget<SigninController> { 
+
+  // create the refrence obj of signin_controller 
+  SignInController signinController = SignInController();
+
   SigninScreen({Key? key}) : super(key: key);
 
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
@@ -228,6 +233,27 @@ class SigninScreen extends GetWidget<SigninController> {
                                       ])))
                         ]))))));
   }
+
+  // continue button widget  in this i called signIn() method from signin_controller
+  Widget _buildContinueButton() {
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20.0),
+        ),
+      ),
+      onPressed: () {
+        if (_formKey.currentState!.validate()) {
+          signinController.signIn();
+        }
+      },
+      child: Text(
+        "lbl_continue".tr,
+        style: CustomTextStyles.bodyMediumGray900,
+      ),
+    );
+  }
+
 
   /// Navigates to the splashScreen when the action is triggered.
   onTapTxtTRU() {

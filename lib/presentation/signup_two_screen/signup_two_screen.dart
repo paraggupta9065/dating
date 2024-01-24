@@ -192,8 +192,8 @@ class SignupTwoScreen extends GetWidget<SignupTwoController> {
         buttonTextStyle: CustomTextStyles.bodyMediumGray900,
         onPressed: () {
           if (_formKey.currentState!.validate()) {
-            // onTapContinueButton();
-            signupController.signUp();
+            //onTapContinueButton();
+            signupController.signUp(); 
           }
         });
   }

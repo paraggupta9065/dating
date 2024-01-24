@@ -1,28 +1,31 @@
 import 'package:get/get.dart';
-import 'package:http/http.dart' as http;
+import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
 
 class SignInController extends GetxController {
-  final String apiUrl = 'https://trudating.vaininnovation.in/api/sign-in';
+  var userNameController = TextEditingController();
+  var passwordController = TextEditingController();
 
-  Future<void> signIn(String name, String password) async {
+
+  Future<void> signIn() async {
     try {
-      Map<String, String> data = {
-        'email': name,
-        'password': password,
-      };
+      var apiUrl = 'https://trudating.vaininnovation.in/api/sign-in';
 
-      final response = await http.post(Uri.parse(apiUrl), body: data);
+      var response = await Dio().post(
+        apiUrl,
+        data: {
+          'username': userNameController.text,
+          'password': passwordController.text,
+        },
+      );
 
       if (response.statusCode == 200) {
-        print('SignIn successful');
-        print(response.body);
+        print('Sign-in successful');
       } else {
-        print('SignIn failed');
-        print('Status Code: ${response.statusCode}');
-        print('Response Body: ${response.body}');
+        print('Sign-in failed. ${response.statusCode}: ${response.data}');
       }
-    } catch (e) {
-      print('Exception during SignIn: $e');
+    } catch (error) {
+      print('Error during sign-in: $error');
     }
   }
 }
