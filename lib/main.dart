@@ -21,11 +21,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: theme,
-      translations: AppLocalization(),
       locale: Get.deviceLocale, //for setting localization strings
-      fallbackLocale: Locale('en', 'US'),
-      title: 'tru_dating',
-      initialBinding: InitialBindings(),
+      title: 'tru dating',
       initialRoute: AppRoutes.initialRoute,
       getPages: AppRoutes.pages,
     );
