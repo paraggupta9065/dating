@@ -2,8 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:tru_dating/core/app_export.dart';
 import 'package:tru_dating/widgets/custom_elevated_button.dart';
 
+import '../controllers/prompt_questions_controller.dart';
+import '../widgets/promptquestionslist_item_widget.dart';
+import 'promptquestionslist_item_model.dart';
+
 class PromptQuestionsScreen extends StatelessWidget {
-  const PromptQuestionsScreen({Key? key}) : super(key: key);
+  PromptQuestionsScreen({Key? key}) : super(key: key);
+  PromptQuestionsController controller = Get.put(PromptQuestionsController());
 
   @override
   Widget build(BuildContext context) {

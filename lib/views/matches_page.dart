@@ -5,6 +5,11 @@ import 'package:tru_dating/widgets/app_bar/appbar_subtitle_two.dart';
 import 'package:tru_dating/widgets/app_bar/custom_app_bar.dart';
 import 'package:tru_dating/widgets/custom_elevated_button.dart';
 
+import '../controllers/matches_controller.dart';
+import '../models/matches_model.dart';
+import '../models/matchesgrid_item_model.dart';
+import '../widgets/matchesgrid_item_widget.dart';
+
 // ignore_for_file: must_be_immutable
 class MatchesPage extends StatelessWidget {
   MatchesPage({Key? key}) : super(key: key);

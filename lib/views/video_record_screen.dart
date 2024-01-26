@@ -3,8 +3,12 @@ import 'package:tru_dating/core/app_export.dart';
 import 'package:tru_dating/widgets/custom_icon_button.dart';
 import 'package:tru_dating/widgets/custom_radio_button.dart';
 
+import '../controllers/video_record_controller.dart';
+
 class VideoRecordScreen extends StatelessWidget {
-  const VideoRecordScreen({Key? key}) : super(key: key);
+  VideoRecordScreen({Key? key}) : super(key: key);
+
+  final VideoRecordController controller = Get.put(VideoRecordController());
 
   @override
   Widget build(BuildContext context) {

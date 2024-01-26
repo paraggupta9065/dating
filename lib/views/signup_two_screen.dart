@@ -13,6 +13,8 @@ class SignupTwoScreen extends StatelessWidget {
 
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
+  final SignupController controller = Get.put(SignupController());
+
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);

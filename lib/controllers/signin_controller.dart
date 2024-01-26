@@ -1,20 +1,20 @@
 import 'package:get/get.dart';
-import 'package:dio/dio.dart';
+import 'package:dio/dio.dart' as dio;
 import 'package:flutter/material.dart';
 
-class SignInController extends GetxController {
-  var userNameController = TextEditingController();
-  var passwordController = TextEditingController();
+import '../core/api_handler.dart';
+import '../core/constants/constants.dart';
 
+class SignInController extends GetxController {
+  TextEditingController userNameController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
 
   Future<void> signIn() async {
     try {
-      var apiUrl = 'https://trudating.vaininnovation.in/api/sign-in';
-
-      var response = await Dio().post(
-        apiUrl,
-        data: {
-          'username': userNameController.text,
+      dio.Response response = await ApiHandler.post(
+        signInUrl,
+        {
+          'name': userNameController.text,
           'password': passwordController.text,
         },
       );

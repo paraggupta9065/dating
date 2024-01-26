@@ -6,8 +6,12 @@ import 'package:tru_dating/widgets/app_bar/appbar_trailing_image.dart';
 import 'package:tru_dating/widgets/app_bar/custom_app_bar.dart';
 import 'package:tru_dating/widgets/custom_radio_button.dart';
 
+import '../controllers/video_controller.dart';
+
 class VideoScreen extends StatelessWidget {
-  const VideoScreen({Key? key}) : super(key: key);
+  VideoScreen({Key? key}) : super(key: key);
+
+  final VideoController controller = Get.put(VideoController());
 
   @override
   Widget build(BuildContext context) {

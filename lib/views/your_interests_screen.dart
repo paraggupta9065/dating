@@ -5,9 +5,14 @@ import 'package:tru_dating/widgets/app_bar/appbar_leading_image.dart';
 import 'package:tru_dating/widgets/app_bar/appbar_subtitle_one.dart';
 import 'package:tru_dating/widgets/app_bar/custom_app_bar.dart';
 import 'package:tru_dating/widgets/custom_elevated_button.dart';
+import '../models/coffee_item_model.dart';
+import '../widgets/coffee_item_widget.dart';
+import 'your_interests_controller.dart';
 
 class YourInterestsScreen extends StatelessWidget {
-  const YourInterestsScreen({Key? key}) : super(key: key);
+  YourInterestsScreen({Key? key}) : super(key: key);
+
+  final YourInterestsController controller = Get.put(YourInterestsController());
 
   @override
   Widget build(BuildContext context) {

@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:tru_dating/core/app_export.dart';
 
+import '../controllers/interests_controller.dart';
+import '../models/fooddrink_item_model.dart';
+import '../models/interests_model.dart';
+import '../widgets/fooddrink_item_widget.dart';
+
 class InterestsPage extends StatelessWidget {
   InterestsPage({Key? key})
       : super(
           key: key,
         );
 
-  InterestsController controller =
+  final InterestsController controller =
       Get.put(InterestsController(InterestsModel().obs));
 
   @override

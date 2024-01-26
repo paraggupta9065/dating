@@ -3,11 +3,14 @@ import 'package:tru_dating/core/app_export.dart';
 import 'package:tru_dating/widgets/custom_elevated_button.dart';
 import 'package:tru_dating/widgets/custom_text_form_field.dart';
 import 'package:tru_dating/core/utils/validation_functions.dart';
+import '../controllers/select_country_controller.dart';
 
 // ignore: must_be_immutable
 class SelectCountryScreen extends StatelessWidget {
   SelectCountryScreen({Key? key}) : super(key: key);
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  final SelectCountryController controller = Get.put(SelectCountryController());
 
   @override
   Widget build(BuildContext context) {

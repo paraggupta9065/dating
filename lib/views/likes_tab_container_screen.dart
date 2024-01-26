@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:tru_dating/core/app_export.dart';
-import 'package:tru_dating/widgets/custom_bottom_bar.dart';
+
+import '../controllers/likes_tab_container_controller.dart';
+import 'likes_page.dart';
 
 // ignore_for_file: must_be_immutable
 class LikesTabContainerScreen extends StatelessWidget {
-  const LikesTabContainerScreen({Key? key})
+  LikesTabContainerScreen({Key? key})
       : super(
           key: key,
         );
+
+  LikesTabContainerController controller =
+      Get.put(LikesTabContainerController());
 
   @override
   Widget build(BuildContext context) {

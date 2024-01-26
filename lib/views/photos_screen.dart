@@ -6,8 +6,13 @@ import 'package:tru_dating/widgets/app_bar/appbar_trailing_image.dart';
 import 'package:tru_dating/widgets/app_bar/custom_app_bar.dart';
 import 'package:tru_dating/widgets/custom_icon_button.dart';
 
+import '../controllers/photos_controller.dart';
+import '../models/photos_item_model.dart';
+import '../widgets/photos_item_widget.dart';
+
 class PhotosScreen extends StatelessWidget {
-  const PhotosScreen({Key? key}) : super(key: key);
+  PhotosScreen({Key? key}) : super(key: key);
+  PhotosController controller = Get.put(PhotosController());
 
   @override
   Widget build(BuildContext context) {

@@ -5,8 +5,15 @@ import 'package:tru_dating/widgets/app_bar/appbar_subtitle.dart';
 import 'package:tru_dating/widgets/app_bar/appbar_trailing_image.dart';
 import 'package:tru_dating/widgets/app_bar/custom_app_bar.dart';
 
+import '../controllers/prompts_controller.dart';
+import '../widgets/aboutmelist_item_widget.dart';
+import '../widgets/photos1_item_widget.dart';
+import 'aboutmelist_item_model.dart';
+import 'photos1_item_model.dart';
+
 class PromptsScreen extends StatelessWidget {
-  const PromptsScreen({Key? key}) : super(key: key);
+  PromptsScreen({Key? key}) : super(key: key);
+  final PromptsController controller = Get.put(PromptsController());
 
   @override
   Widget build(BuildContext context) {

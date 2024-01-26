@@ -4,7 +4,9 @@ import 'package:tru_dating/core/utils/validation_functions.dart';
 import 'package:tru_dating/views/home_container_screen.dart';
 import 'package:tru_dating/widgets/custom_elevated_button.dart';
 import 'package:tru_dating/widgets/custom_text_form_field.dart';
-import 'package:tru_dating/controllers/signin_controller.dart'; // import signin_controller controller
+import 'package:tru_dating/controllers/signin_controller.dart';
+
+import '../controllers/select_country_controller.dart'; // import signin_controller controller
 
 // ignore_for_file: must_be_immutable
 class SigninScreen extends StatelessWidget {
@@ -14,6 +16,8 @@ class SigninScreen extends StatelessWidget {
   SigninScreen({Key? key}) : super(key: key);
 
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  final SignInController controller = Get.put(SignInController());
 
   @override
   Widget build(BuildContext context) {
@@ -80,8 +84,7 @@ class SigninScreen extends StatelessWidget {
                                             hintText: "lbl_username".tr,
                                             validator: (value) {
                                               if (value == null ||
-                                                  (!isText(value,
-                                                      isRequired: true))) {
+                                                  value.length < 5) {
                                                 return "err_msg_please_enter_valid_text"
                                                     .tr;
                                               }
@@ -113,8 +116,7 @@ class SigninScreen extends StatelessWidget {
                                             hintText: "lbl_password".tr,
                                             validator: (value) {
                                               if (value == null ||
-                                                  (!isValidPassword(value,
-                                                      isRequired: true))) {
+                                                  value.length < 7) {
                                                 return "err_msg_please_enter_valid_password"
                                                     .tr;
                                               }
@@ -185,12 +187,10 @@ class SigninScreen extends StatelessWidget {
                                                 borderRadius:
                                                     BorderRadius.circular(
                                                         20.v)),
-                                            onPressed: () {
-                                              print('helo');
+                                            onPressed: () async {
                                               if (_formKey.currentState!
                                                   .validate()) {
-                                                print('hel');
-                                                Get.to(HomeContainerScreen());
+                                                await controller.signIn();
                                               }
                                             },
                                             text: "lbl_continue".tr,

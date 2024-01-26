@@ -1,14 +1,21 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:tru_dating/controllers/choose_plan_controller.dart';
 import 'package:tru_dating/core/app_export.dart';
 import 'package:tru_dating/widgets/app_bar/appbar_leading_image.dart';
 import 'package:tru_dating/widgets/app_bar/appbar_title.dart';
 import 'package:tru_dating/widgets/app_bar/custom_app_bar.dart';
 import 'package:tru_dating/widgets/custom_elevated_button.dart';
 
+import '../models/chooseplan_item_model.dart';
+import '../models/seewhoalready_item_model.dart';
+import '../widgets/chooseplan_item_widget.dart';
+import '../widgets/seewhoalready_item_widget.dart';
+
 class ChoosePlanScreen extends StatelessWidget {
-  const ChoosePlanScreen({Key? key}) : super(key: key);
+  ChoosePlanScreen({Key? key}) : super(key: key);
+  final ChoosePlanController controller = Get.put(ChoosePlanController());
 
   @override
   Widget build(BuildContext context) {

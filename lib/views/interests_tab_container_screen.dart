@@ -5,9 +5,14 @@ import 'package:tru_dating/widgets/app_bar/appbar_subtitle.dart';
 import 'package:tru_dating/widgets/app_bar/appbar_trailing_image.dart';
 import 'package:tru_dating/widgets/app_bar/custom_app_bar.dart';
 
-class InterestsTabContainerScreen extends StatelessWidget {
-  const InterestsTabContainerScreen({Key? key}) : super(key: key);
+import '../controllers/interests_tab_container_controller.dart';
+import 'interests_page.dart';
 
+class InterestsTabContainerScreen extends StatelessWidget {
+  InterestsTabContainerScreen({Key? key}) : super(key: key);
+
+  InterestsTabContainerController controller =
+      Get.put(InterestsTabContainerController());
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);

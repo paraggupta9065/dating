@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tru_dating/controllers/signin_controller.dart';
 import 'package:tru_dating/core/app_export.dart';
 import 'package:tru_dating/core/utils/validation_functions.dart';
 import 'package:tru_dating/widgets/custom_elevated_button.dart';
@@ -9,6 +10,7 @@ class SignupOneScreen extends StatelessWidget {
   SignupOneScreen({Key? key}) : super(key: key);
 
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final SignInController controller = Get.put(SignInController());
 
   @override
   Widget build(BuildContext context) {
@@ -134,7 +136,7 @@ class SignupOneScreen extends StatelessWidget {
               child: CustomTextFormField(
                   key: Key('mobileNumber'),
                   width: 166.h,
-                  controller: controller.mobileNumberController,
+                  controller: controller.userNameController,
                   hintText: "msg_enter_mobile_number".tr,
                   hintStyle: CustomTextStyles.bodyLarge_1,
                   textInputAction: TextInputAction.done,

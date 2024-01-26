@@ -6,9 +6,12 @@ import 'package:tru_dating/widgets/app_bar/appbar_trailing_image.dart';
 import 'package:tru_dating/widgets/app_bar/custom_app_bar.dart';
 import 'package:tru_dating/widgets/custom_text_form_field.dart';
 
-class MoreInfoScreen extends StatelessWidget {
-  const MoreInfoScreen({Key? key}) : super(key: key);
+import '../controllers/more_info_controller.dart';
 
+class MoreInfoScreen extends StatelessWidget {
+  MoreInfoScreen({Key? key}) : super(key: key);
+
+  final MoreInfoController controller = Get.put(MoreInfoController());
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);

@@ -3,8 +3,12 @@ import 'package:tru_dating/core/app_export.dart';
 import 'package:tru_dating/widgets/custom_elevated_button.dart';
 import 'package:tru_dating/widgets/custom_text_form_field.dart';
 
+import '../controllers/some_more_info_controller.dart';
+
 class SomeMoreInfoScreen extends StatelessWidget {
-  const SomeMoreInfoScreen({Key? key}) : super(key: key);
+  SomeMoreInfoScreen({Key? key}) : super(key: key);
+
+  final SomeMoreInfoController controller = Get.put(SomeMoreInfoController());
 
   @override
   Widget build(BuildContext context) {

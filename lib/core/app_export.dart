@@ -1,7 +1,6 @@
 export 'package:connectivity_plus/connectivity_plus.dart';
 export 'package:tru_dating/core/constants/constants.dart';
 export 'package:tru_dating/core/errors/exceptions.dart';
-export 'package:tru_dating/core/network/network_info.dart';
 export 'package:tru_dating/core/utils/image_constant.dart';
 export 'package:tru_dating/core/utils/logger.dart';
 export 'package:tru_dating/core/utils/pref_utils.dart';

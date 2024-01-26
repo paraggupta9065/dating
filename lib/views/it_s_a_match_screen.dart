@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:tru_dating/core/app_export.dart';
 import 'package:tru_dating/widgets/custom_elevated_button.dart';
 
+import '../controllers/it_s_a_match_controller.dart';
+
 // ignore: must_be_immutable
 class ItSAMatchScreen extends StatelessWidget {
   ItSAMatchScreen({Key? key}) : super(key: key);
@@ -22,6 +24,7 @@ class ItSAMatchScreen extends StatelessWidget {
   //   _confettiController.dispose();
   //   super.dispose();
   // }
+  ItSAMatchController controller = Get.put(ItSAMatchController());
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);

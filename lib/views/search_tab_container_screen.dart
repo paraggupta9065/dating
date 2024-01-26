@@ -4,8 +4,14 @@ import 'package:tru_dating/widgets/app_bar/appbar_leading_image.dart';
 import 'package:tru_dating/widgets/app_bar/appbar_title_searchview.dart';
 import 'package:tru_dating/widgets/app_bar/custom_app_bar.dart';
 
+import '../controllers/search_tab_container_controller.dart';
+import 'search_page.dart';
+
 class SearchTabContainerScreen extends StatelessWidget {
-  const SearchTabContainerScreen({Key? key}) : super(key: key);
+  SearchTabContainerScreen({Key? key}) : super(key: key);
+
+  final SearchTabContainerController controller =
+      Get.put(SearchTabContainerController());
 
   @override
   Widget build(BuildContext context) {

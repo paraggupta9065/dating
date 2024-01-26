@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:tru_dating/controllers/basics_controller.dart';
 import 'package:tru_dating/core/app_export.dart';
+import 'package:tru_dating/models/basics_item_model.dart';
 import 'package:tru_dating/widgets/app_bar/appbar_leading_image.dart';
 import 'package:tru_dating/widgets/app_bar/appbar_subtitle.dart';
 import 'package:tru_dating/widgets/app_bar/appbar_trailing_image.dart';
 import 'package:tru_dating/widgets/app_bar/custom_app_bar.dart';
+import 'package:tru_dating/widgets/basics_item_widget.dart';
 
 class BasicsScreen extends StatelessWidget {
-  const BasicsScreen({Key? key}) : super(key: key);
+  BasicsScreen({Key? key}) : super(key: key);
+
+  final BasicsController controller = Get.put(BasicsController());
 
   @override
   Widget build(BuildContext context) {

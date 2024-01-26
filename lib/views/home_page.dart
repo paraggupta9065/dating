@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:tru_dating/core/app_export.dart';
 import 'package:tru_dating/widgets/custom_icon_button.dart';
 
+import '../controllers/home_controller.dart';
+import '../models/home_model.dart';
+
 // ignore_for_file: must_be_immutable
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);

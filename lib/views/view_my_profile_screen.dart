@@ -6,8 +6,12 @@ import 'package:tru_dating/widgets/app_bar/appbar_title_image.dart';
 import 'package:tru_dating/widgets/app_bar/custom_app_bar.dart';
 import 'package:tru_dating/widgets/custom_floating_text_field.dart';
 
+import '../controllers/view_my_profile_controller.dart';
+
 class ViewMyProfileScreen extends StatelessWidget {
-  const ViewMyProfileScreen({Key? key}) : super(key: key);
+  ViewMyProfileScreen({Key? key}) : super(key: key);
+
+  final ViewMyProfileController controller = Get.put(ViewMyProfileController());
 
   @override
   Widget build(BuildContext context) {

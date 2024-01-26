@@ -8,8 +8,15 @@ import 'package:tru_dating/widgets/app_bar/custom_app_bar.dart';
 import 'package:tru_dating/widgets/custom_outlined_button.dart';
 import 'package:tru_dating/widgets/custom_text_form_field.dart';
 
+import '../controllers/my_personal_info_controller.dart';
+import '../models/aboutme_item_model.dart';
+import '../models/widget_item_model.dart';
+import '../widgets/aboutme_item_widget.dart';
+import '../widgets/widget_item_widget.dart';
+
 class MyPersonalInfoScreen extends StatelessWidget {
-  const MyPersonalInfoScreen({Key? key}) : super(key: key);
+  MyPersonalInfoScreen({Key? key}) : super(key: key);
+  MyPersonalInfoController controller = Get.put(MyPersonalInfoController());
 
   @override
   Widget build(BuildContext context) {
