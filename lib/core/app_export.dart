@@ -1,14 +1,10 @@
 export 'package:connectivity_plus/connectivity_plus.dart';
 export 'package:tru_dating/core/constants/constants.dart';
 export 'package:tru_dating/core/errors/exceptions.dart';
-export 'package:tru_dating/core/network/network_info.dart';
 export 'package:tru_dating/core/utils/image_constant.dart';
-export 'package:tru_dating/core/utils/initial_bindings.dart';
 export 'package:tru_dating/core/utils/logger.dart';
 export 'package:tru_dating/core/utils/pref_utils.dart';
 export 'package:tru_dating/core/utils/size_utils.dart';
-export 'package:tru_dating/data/models/selectionPopupModel/selection_popup_model.dart';
-export 'package:tru_dating/localization/app_localization.dart';
 export 'package:tru_dating/routes/app_routes.dart';
 export 'package:tru_dating/theme/app_decoration.dart';
 export 'package:tru_dating/theme/custom_text_style.dart';
