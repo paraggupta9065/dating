@@ -19,7 +19,7 @@ class UsersProfileFetch extends GetxController {
     } catch (e) {
       throw Exception('Failed to load user profile. Error: $e');
     }
-  }
+  } 
 
   // used getters for get the perticular data ex. gender  from the databse > column
 
@@ -36,4 +36,6 @@ class UsersProfileFetch extends GetxController {
   String get lookingFor => userProfile['looking_for'] ?? '';
   String get highestDegree => userProfile['graduate_degree'] ?? '';
   String get relationshipGoal => userProfile['relationship_goal'] ?? '';
+  String get currentLocation => userProfile['current_location'] ?? '';
+  String get homeLocation => userProfile['home_location'] ?? '';
 }
