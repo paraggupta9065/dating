@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:tru_dating/views/home_page.dart';
 
 class SignupController extends GetxController {
   var fullNameController = TextEditingController();
@@ -26,6 +27,7 @@ class SignupController extends GetxController {
   
       if (response.statusCode == 200) {
         print('Sign-up successful');
+        Get.to(() => HomePage());
       } else {
         print('Sign-up failed. ${response.statusCode}: ${response.data}');
       }

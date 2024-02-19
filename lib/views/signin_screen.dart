@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tru_dating/core/app_export.dart';
 import 'package:tru_dating/core/utils/validation_functions.dart';
 import 'package:tru_dating/views/home_container_screen.dart';
+import 'package:tru_dating/views/home_page.dart';
 import 'package:tru_dating/widgets/custom_elevated_button.dart';
 import 'package:tru_dating/widgets/custom_text_form_field.dart';
 import 'package:tru_dating/controllers/signin_controller.dart';
@@ -176,7 +177,9 @@ class SigninScreen extends StatelessWidget {
                                         //         .withOpacity(0.44)),
                                         SizedBox(height: 21.v),
                                         GestureDetector(
-                                          onTap: () {},
+                                          onTap: () {
+                                            //Get.to(HomePage());
+                                          },
                                           child: Text("msg_forget_password".tr,
                                               style: CustomTextStyles
                                                   .bodyMediumOnPrimary_2),
@@ -187,10 +190,11 @@ class SigninScreen extends StatelessWidget {
                                                 borderRadius:
                                                     BorderRadius.circular(
                                                         20.v)),
-                                            onPressed: () async {
+                                            onPressed: () {
                                               if (_formKey.currentState!
                                                   .validate()) {
-                                                await controller.signIn();
+                                                 controller.signIn();
+                                                //Get.to(HomePage());
                                               }
                                             },
                                             text: "lbl_continue".tr,
@@ -241,7 +245,8 @@ class SigninScreen extends StatelessWidget {
       ),
       onPressed: () {
         if (_formKey.currentState!.validate()) {
-          signinController.signIn();
+          // signinController.signIn();
+          Get.to(HomePage());
         }
       },
       child: Text(

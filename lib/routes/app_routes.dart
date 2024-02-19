@@ -45,6 +45,8 @@ class AppRoutes {
 
   static const String signupTwoScreen = '/signup_two_screen';
 
+  static const String signupThreeScreen = '/signup_three_screen';
+
   static const String selectCountryScreen = '/select_country_screen';
 
   static const String videoIntroScreen = '/video_intro_screen';
