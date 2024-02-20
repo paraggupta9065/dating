@@ -171,7 +171,7 @@ class SignupTwoScreen extends StatelessWidget {
     return CustomTextFormField(
         key: Key('confirmPassword'),
         textStyle: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
-        controller: controller.confirmPasswordController,
+        // controller: controller.confirmPasswordController,
         hintText: "msg_confirm_password".tr,
         validator: (value) {
           if (value == null || (!isText(value, isRequired: true))) {
@@ -193,13 +193,7 @@ class SignupTwoScreen extends StatelessWidget {
         text: "lbl_continue".tr,
         buttonTextStyle: CustomTextStyles.bodyMediumGray900,
         onPressed: () {
-          if(Key('confirmPassword') == Key('password')){
-            if (_formKey.currentState!.validate()) {
-              onTapContinueButton();
-              Get.to(() => HomePage());
-              signupController.signUp();
-            }
-          }
+
           
         });
   }

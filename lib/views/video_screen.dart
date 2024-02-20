@@ -189,3 +189,7 @@ class VideoScreen extends StatelessWidget {
     );
   }
 }
+
+class VideoController {
+  get radioGroup => null;
+}
