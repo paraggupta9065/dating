@@ -61,7 +61,9 @@ class SignupScreen extends StatelessWidget {
                                         width: 24.adaptSize)),
                                 buttonTextStyle:
                                     CustomTextStyles.bodyMediumGray900,
-                                onPressed: () {}),
+                                onPressed: () {
+                                  onTapGmail();
+                                }),
                             SizedBox(height: 10.v),
                             CustomElevatedButton(
                                 onPressed: () {
@@ -153,3 +155,9 @@ class SignupScreen extends StatelessWidget {
     );
   }
 }
+
+onTapGmail() {
+    Get.toNamed(
+      AppRoutes.signupThreeScreen,
+    );
+  }

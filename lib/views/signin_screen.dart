@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:tru_dating/core/app_export.dart';
-import 'package:tru_dating/core/utils/validation_functions.dart';
-import 'package:tru_dating/views/home_container_screen.dart';
+//import 'package:tru_dating/core/utils/validation_functions.dart';
+//import 'package:tru_dating/views/home_container_screen.dart';
 import 'package:tru_dating/views/home_page.dart';
 import 'package:tru_dating/widgets/custom_elevated_button.dart';
 import 'package:tru_dating/widgets/custom_text_form_field.dart';
 import 'package:tru_dating/controllers/signin_controller.dart';
 
-import '../controllers/select_country_controller.dart'; // import signin_controller controller
+//import '../controllers/select_country_controller.dart'; // import signin_controller controller
 
 // ignore_for_file: must_be_immutable
 class SigninScreen extends StatelessWidget {
@@ -193,7 +193,8 @@ class SigninScreen extends StatelessWidget {
                                             onPressed: () {
                                               if (_formKey.currentState!
                                                   .validate()) {
-                                                 controller.signIn();
+                                                controller.signIn();
+                                                //_buildContinueButton();
                                                 //Get.to(HomePage());
                                               }
                                             },
@@ -236,25 +237,25 @@ class SigninScreen extends StatelessWidget {
   }
 
   // continue button widget  in this i called signIn() method from signin_controller
-  Widget _buildContinueButton() {
-    return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20.0),
-        ),
-      ),
-      onPressed: () {
-        if (_formKey.currentState!.validate()) {
-          // signinController.signIn();
-          Get.to(HomePage());
-        }
-      },
-      child: Text(
-        "lbl_continue".tr,
-        style: CustomTextStyles.bodyMediumGray900,
-      ),
-    );
-  }
+  // Widget _buildContinueButton() {
+  //   return ElevatedButton(
+  //     style: ElevatedButton.styleFrom(
+  //       shape: RoundedRectangleBorder(
+  //         borderRadius: BorderRadius.circular(20.0),
+  //       ),
+  //     ),
+  //     onPressed: () {
+  //       if (_formKey.currentState!.validate()) {
+  //         // signinController.signIn();
+  //         Get.to(HomePage());
+  //       }
+  //     },
+  //     child: Text(
+  //       "lbl_continue".tr,
+  //       style: CustomTextStyles.bodyMediumGray900,
+  //     ),
+  //   );
+  // }
 
   /// Navigates to the splashScreen when the action is triggered.
   onTapTxtTRU() {

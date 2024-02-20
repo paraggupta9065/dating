@@ -65,7 +65,7 @@ class HomePage extends StatelessWidget {
                                                   EdgeInsets.only(top: 10.h),
                                               child: GestureDetector(
                                                   onTap: () {
-                                                    onTapTxtTRU();
+                                                    //onTapTxtTRU();
                                                   },
                                                   child: Text("lbl_tru".tr,
                                                       style: theme.textTheme
