@@ -13,7 +13,9 @@ class SignupScreen extends StatelessWidget {
             body: SizedBox(
                 height: 820.v,
                 width: double.maxFinite,
-                child: Stack(alignment: Alignment.center, children: [
+                child: Stack(
+                  alignment: Alignment.center, 
+                  children: [
                   CustomImageView(
                       imagePath: ImageConstant.imgPexelsCottonbro3692748,
                       height: 498.v,

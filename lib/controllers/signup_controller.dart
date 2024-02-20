@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 import 'package:tru_dating/routes/app_routes.dart';
+import 'package:tru_dating/views/home_page.dart';
 
 class SignupController extends GetxController {
   TextEditingController fullNameController = TextEditingController();
@@ -20,6 +21,10 @@ class SignupController extends GetxController {
 
       if (response.statusCode == 200) {
         Get.toNamed(AppRoutes.selectCountryScreen);
+
+        print('Sign-up successful');
+        Get.to(() => HomePage());
+
       } else {
         Get.snackbar(
           "Error",

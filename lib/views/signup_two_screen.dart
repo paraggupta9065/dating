@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tru_dating/core/app_export.dart';
 import 'package:tru_dating/core/utils/validation_functions.dart';
+import 'package:tru_dating/views/home_page.dart';
 import 'package:tru_dating/widgets/custom_elevated_button.dart';
 import 'package:tru_dating/widgets/custom_text_form_field.dart';
 import 'package:tru_dating/controllers/signup_controller.dart';
@@ -73,9 +74,9 @@ class SignupTwoScreen extends StatelessWidget {
                           _buildContinueButton(),
                           SizedBox(height: 31.v),
                           GestureDetector(
-                            onTap: () {
-                              onTapSignIn();
-                            },
+                            // onTap: () {
+                            //   onTapSignIn();
+                            // },
                             child: RichText(
                                 text: TextSpan(children: [
                                   TextSpan(
@@ -111,7 +112,7 @@ class SignupTwoScreen extends StatelessWidget {
         hintStyle: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
         textStyle: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
         controller: controller.fullNameController,
-        hintText: "lbl_your_full_name".tr,
+        //hintText: "lbl_your_full_name".tr,
         validator: (value) {
           if (value == null || (!isText(value, isRequired: true))) {
             return "err_msg_please_enter_valid_text".tr;
@@ -192,10 +193,8 @@ class SignupTwoScreen extends StatelessWidget {
         text: "lbl_continue".tr,
         buttonTextStyle: CustomTextStyles.bodyMediumGray900,
         onPressed: () {
-          if (_formKey.currentState!.validate()) {
-            //onTapContinueButton();
-            signupController.signUp(name: '', email: '', password: '');
-          }
+
+          
         });
   }
 
