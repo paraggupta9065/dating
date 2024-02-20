@@ -10,6 +10,8 @@ import 'package:http/http.dart' as http;
 class VideoUploadController extends GetxController {
   RxBool isLoading = false.obs;
 
+  get radioGroup => null;
+
   Future<void> uploadVideo(String userId, String videoPath) async {
     try {
       isLoading(true);
