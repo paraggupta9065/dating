@@ -13,7 +13,7 @@ class SignupController extends GetxController {
   TextEditingController fullNameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-  TextEditingController confirmPasswordController = TextEditingController();
+  // TextEditingController confirmPasswordController = TextEditingController();
 
   void signUp() async {
     try {
