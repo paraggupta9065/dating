@@ -9,7 +9,6 @@ import 'package:tru_dating/widgets/honeydoelist_item_widget.dart';
 import '../models/honey_doe_model.dart';
 import '../models/honeydoelist_item_model.dart';
 
-// ignore_for_file: must_be_immutable
 class HoneyDoePage extends StatelessWidget {
   HoneyDoePage({Key? key}) : super(key: key);
 
