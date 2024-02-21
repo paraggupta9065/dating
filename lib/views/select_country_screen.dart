@@ -85,8 +85,7 @@ class SelectCountryScreen extends StatelessWidget {
                                 contentPadding: EdgeInsets.symmetric(
                                     horizontal: 12.h, vertical: 14.v),
                                 validator: (value) {
-                                  if (value == null ||
-                                      (!isText(value, isRequired: true))) {
+                                  if (value == null) {
                                     return "First Fill The Country Name".tr;
                                   }
                                   return null;
@@ -112,8 +111,7 @@ class SelectCountryScreen extends StatelessWidget {
                                 contentPadding: EdgeInsets.symmetric(
                                     horizontal: 12.h, vertical: 14.v),
                                 validator: (value) {
-                                  if (value == null ||
-                                      (!isText(value, isRequired: true))) {
+                                  if (value == null) {
                                     return "First Fill The City Name".tr;
                                   }
                                   return null;

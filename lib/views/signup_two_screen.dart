@@ -113,7 +113,7 @@ class SignupTwoScreen extends StatelessWidget {
         controller: controller.fullNameController,
         //hintText: "lbl_your_full_name".tr,
         validator: (value) {
-          if (value == null || (!isText(value, isRequired: true))) {
+          if (value == null) {
             return "err_msg_please_enter_valid_text".tr;
           }
           return null;
@@ -133,7 +133,7 @@ class SignupTwoScreen extends StatelessWidget {
         controller: controller.emailController,
         hintText: "lbl_your_email".tr,
         validator: (value) {
-          if (value == null || (!isText(value, isRequired: true))) {
+          if (value == null && value!.isEmail) {
             return "err_msg_please_enter_valid_email".tr;
           }
           return null;
@@ -152,7 +152,7 @@ class SignupTwoScreen extends StatelessWidget {
         controller: controller.passwordController,
         hintText: "lbl_password".tr,
         validator: (value) {
-          if (value == null || (!isText(value, isRequired: true))) {
+          if (value == null) {
             return "err_msg_please_enter_valid_password".tr;
           }
           return null;
@@ -173,7 +173,7 @@ class SignupTwoScreen extends StatelessWidget {
         // controller: controller.confirmPasswordController,
         hintText: "msg_confirm_password".tr,
         validator: (value) {
-          if (value == null || (!isText(value, isRequired: true))) {
+          if (value == null) {
             return "err_msg_please_enter_valid_password".tr;
           }
           return null;
@@ -191,7 +191,9 @@ class SignupTwoScreen extends StatelessWidget {
     return CustomElevatedButton(
         text: "lbl_continue".tr,
         buttonTextStyle: CustomTextStyles.bodyMediumGray900,
-        onPressed: () {});
+        onPressed: () {
+          Get.put(SignupController()).signUp();
+        });
   }
 
   /// Navigates to the selectCountryScreen when the action is triggered.

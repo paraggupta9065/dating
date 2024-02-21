@@ -1,8 +1,13 @@
-import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/get_navigation.dart';
+import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:tru_dating/routes/app_routes.dart';
 import 'package:tru_dating/views/home_page.dart';
+
+import '../core/api_handler.dart';
+import '../core/constants/constants.dart';
 
 class SignupController extends GetxController {
   TextEditingController fullNameController = TextEditingController();
@@ -10,21 +15,23 @@ class SignupController extends GetxController {
   TextEditingController passwordController = TextEditingController();
   TextEditingController confirmPasswordController = TextEditingController();
 
-  void signUp({required String name, required String email, required String password}) async {
+  void signUp() async {
     try {
-      
-      final response = await Dio().post('https://tru-dating.vaininnovation.in/api/sign-up', data: {
-        'name': name,
-        'email': email,
-        'password': password,
+      Response response = await ApiHandler.post(signUpUrl, {
+        'name': fullNameController.text,
+        'email': emailController.text,
+        'password': passwordController.text,
       });
 
       if (response.statusCode == 200) {
         Get.toNamed(AppRoutes.selectCountryScreen);
-
-        print('Sign-up successful');
         Get.to(() => HomePage());
-
+      } else if (response.data['message'] != null) {
+        Get.snackbar(
+          "Error",
+          response.data['message'],
+          snackPosition: SnackPosition.BOTTOM,
+        );
       } else {
         Get.snackbar(
           "Error",
@@ -33,7 +40,6 @@ class SignupController extends GetxController {
         );
       }
     } catch (error) {
-      print('API Error: $error');
       Get.snackbar(
         "Error",
         "An error occurred. Please try again later.",
