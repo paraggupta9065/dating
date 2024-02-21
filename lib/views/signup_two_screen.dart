@@ -193,7 +193,6 @@ class SignupTwoScreen extends StatelessWidget {
         text: "lbl_continue".tr,
         buttonTextStyle: CustomTextStyles.bodyMediumGray900,
         onPressed: () {
-<<<<<<< HEAD
           // if(Key('confirmPassword') == Key('password')){
           //   if (_formKey.currentState!.validate()) {
           //     onTapContinueButton();
@@ -204,20 +203,18 @@ class SignupTwoScreen extends StatelessWidget {
 
           if (_formKey.currentState!.validate()) {
             //onTapContinueButton();
-            //signupController.signUp(name: '', email: '', password: '');
+            signupController.signUp(name: '', email: '', password: '');
 
             if (Key('confirmPassword') == Key('password')) {
               if (_formKey.currentState!.validate()) {
                 onTapContinueButton();
                 Get.to(() => HomePage());
-                signupController.signUp();
+                signupController.signUp(name: '', email: '', password: '');
               }
             }
           }
-=======
 
           
->>>>>>> main
         });
   }
 
