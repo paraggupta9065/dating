@@ -12,7 +12,6 @@ class PromptQuestionsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SafeArea(
         child: Scaffold(
             backgroundColor: appTheme.gray50,

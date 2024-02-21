@@ -6,8 +6,6 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
-
     Future.delayed(Duration(seconds: 3)).then(
       (value) {
         Get.toNamed(AppRoutes.signinScreen);

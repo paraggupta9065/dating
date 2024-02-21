@@ -7,15 +7,12 @@ class SignupScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SafeArea(
         child: Scaffold(
             body: SizedBox(
                 height: 820.v,
                 width: double.maxFinite,
-                child: Stack(
-                  alignment: Alignment.center, 
-                  children: [
+                child: Stack(alignment: Alignment.center, children: [
                   CustomImageView(
                       imagePath: ImageConstant.imgPexelsCottonbro3692748,
                       height: 498.v,

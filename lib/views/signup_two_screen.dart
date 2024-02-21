@@ -18,7 +18,6 @@ class SignupTwoScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
@@ -192,10 +191,7 @@ class SignupTwoScreen extends StatelessWidget {
     return CustomElevatedButton(
         text: "lbl_continue".tr,
         buttonTextStyle: CustomTextStyles.bodyMediumGray900,
-        onPressed: () {
-
-          
-        });
+        onPressed: () {});
   }
 
   /// Navigates to the selectCountryScreen when the action is triggered.

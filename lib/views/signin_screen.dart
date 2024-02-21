@@ -22,7 +22,6 @@ class SigninScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SafeArea(
         child: Scaffold(
             resizeToAvoidBottomInset: false,
@@ -193,7 +192,7 @@ class SigninScreen extends StatelessWidget {
                                             onPressed: () {
                                               if (_formKey.currentState!
                                                   .validate()) {
-                                                 controller.signIn();
+                                                controller.signIn();
                                                 //Get.to(HomePage());
                                               }
                                             },

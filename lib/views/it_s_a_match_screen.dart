@@ -27,7 +27,6 @@ class ItSAMatchScreen extends StatelessWidget {
   ItSAMatchController controller = Get.put(ItSAMatchController());
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SafeArea(
         child: Scaffold(
             extendBody: true,
