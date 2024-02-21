@@ -11,7 +11,7 @@ import '../controllers/video_controller.dart';
 class VideoScreen extends StatelessWidget {
   VideoScreen({Key? key}) : super(key: key);
 
-  final VideoController controller = Get.put(VideoController());
+  final VideoUploadController controller = Get.put(VideoUploadController());
 
   @override
   Widget build(BuildContext context) {
@@ -115,11 +115,12 @@ class VideoScreen extends StatelessWidget {
         child: CustomRadioButton(
             text: "msg_allow_peoples_to".tr,
             value: "msg_allow_peoples_to".tr,
-            groupValue: controller.radioGroup.value,
+            //groupValue: controller.radioGroup.value,
             padding: EdgeInsets.symmetric(vertical: 1.v),
             onChange: (value) {
-              controller.radioGroup.value = value;
-            })));
+              //controller.radioGroup.value = value;
+            }
+            )));
   }
 
   /// Section Widget
