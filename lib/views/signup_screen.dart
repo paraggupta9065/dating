@@ -1,5 +1,11 @@
+import 'dart:io';
+//import 'dart:js';
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:tru_dating/core/app_export.dart';
+import 'package:tru_dating/views/signup_three_screen.dart';
 import 'package:tru_dating/widgets/custom_elevated_button.dart';
 
 class SignupScreen extends StatelessWidget {
@@ -13,9 +19,7 @@ class SignupScreen extends StatelessWidget {
             body: SizedBox(
                 height: 820.v,
                 width: double.maxFinite,
-                child: Stack(
-                  alignment: Alignment.center, 
-                  children: [
+                child: Stack(alignment: Alignment.center, children: [
                   CustomImageView(
                       imagePath: ImageConstant.imgPexelsCottonbro3692748,
                       height: 498.v,
@@ -157,7 +161,5 @@ class SignupScreen extends StatelessWidget {
 }
 
 onTapGmail() {
-    Get.toNamed(
-      AppRoutes.signupThreeScreen,
-    );
-  }
+  Get.to(SignupThreeScreen());
+}

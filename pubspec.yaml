@@ -18,6 +18,8 @@ dependencies:
   intl: ^0.18.0
   sizer: ^2.0.15
   confetti: ^0.7.0
+  google_sign_in: ^6.2.1
+  modal_progress_hud_nsn: ^0.5.1
   
 dev_dependencies: 
   flutter_test: 
