@@ -7,6 +7,7 @@ import 'core/localization/app_localization.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+  
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
   ]).then((value) {

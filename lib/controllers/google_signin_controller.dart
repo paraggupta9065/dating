@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 import 'package:tru_dating/routes/app_routes.dart';
 import 'package:tru_dating/views/home_page.dart';

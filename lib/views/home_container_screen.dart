@@ -5,6 +5,8 @@ import 'package:tru_dating/views/home_page.dart';
 import 'package:tru_dating/views/honey_doe_page.dart';
 import 'package:tru_dating/views/matches_page.dart';
 import 'package:tru_dating/widgets/custom_bottom_bar.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+
 
 class HomeContainerScreen extends StatelessWidget {
   const HomeContainerScreen({Key? key}) : super(key: key);
@@ -51,7 +53,7 @@ class HomeContainerScreen extends StatelessWidget {
   Widget getCurrentPage(String currentRoute) {
     switch (currentRoute) {
       case AppRoutes.homePage:
-        return HomePage();
+        return HomePage(user: user,);
       case AppRoutes.matchesPage:
         return MatchesPage();
       case AppRoutes.chatScreen:

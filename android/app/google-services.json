@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "753149018636",
+    "project_id": "tru-dating-de363",
+    "storage_bucket": "tru-dating-de363.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:753149018636:android:eaada628ef7db0db236429",
+        "android_client_info": {
+          "package_name": "com.vaininnovation.trudating"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "753149018636-03b5n2j6qeq89j569vmrqj8sirt54po7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCN-RdjK9IfpPCGpUKvYCKrJTapJoTtKhE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "753149018636-03b5n2j6qeq89j569vmrqj8sirt54po7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

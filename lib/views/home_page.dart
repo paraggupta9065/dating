@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:tru_dating/core/app_export.dart';
+//import 'package:tru_dating/views/google_sign_up.dart';
 import 'package:tru_dating/widgets/custom_icon_button.dart';
 
 import '../controllers/home_controller.dart';
@@ -7,9 +9,11 @@ import '../models/home_model.dart';
 
 // ignore_for_file: must_be_immutable
 class HomePage extends StatelessWidget {
-  HomePage({Key? key}) : super(key: key);
+  //final GoogleSignInAccount user;
+  HomePage({Key? key, required GoogleSignInAccount user,}) : super(key: key);
 
   HomeController controller = Get.put(HomeController(HomeModel().obs));
+  
 
   @override
   Widget build(BuildContext context) {

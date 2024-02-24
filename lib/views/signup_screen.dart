@@ -1,11 +1,9 @@
-import 'dart:io';
-//import 'dart:js';
-import 'dart:math';
+import 'dart:js';
 
 import 'package:flutter/material.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 import 'package:tru_dating/core/app_export.dart';
-import 'package:tru_dating/views/signup_three_screen.dart';
+import 'package:tru_dating/core/google_signin_api.dart';
+import 'package:tru_dating/views/home_page.dart';
 import 'package:tru_dating/widgets/custom_elevated_button.dart';
 
 class SignupScreen extends StatelessWidget {
@@ -14,8 +12,8 @@ class SignupScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
-    return SafeArea(
-        child: Scaffold(
+    return MaterialApp(
+        home: Scaffold(
             body: SizedBox(
                 height: 820.v,
                 width: double.maxFinite,
@@ -66,7 +64,7 @@ class SignupScreen extends StatelessWidget {
                                 buttonTextStyle:
                                     CustomTextStyles.bodyMediumGray900,
                                 onPressed: () {
-                                  onTapGmail();
+                                  signIn();
                                 }),
                             SizedBox(height: 10.v),
                             CustomElevatedButton(
@@ -160,6 +158,12 @@ class SignupScreen extends StatelessWidget {
   }
 }
 
-onTapGmail() {
-  Get.to(SignupThreeScreen());
+Future signIn() async {
+  final user = await GoogleSignInApi.login();
+
+  if (user == null) {
+    print('Sign in Failed!');
+  } else {
+    Get.to(HomePage(user:user));
+  }
 }

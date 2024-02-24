@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 import 'package:tru_dating/routes/app_routes.dart';
 import 'package:tru_dating/views/home_page.dart';
+import 'package:google'
 
 class SignupController extends GetxController {
   TextEditingController fullNameController = TextEditingController();
@@ -23,7 +24,7 @@ class SignupController extends GetxController {
         Get.toNamed(AppRoutes.selectCountryScreen);
 
         print('Sign-up successful');
-        Get.to(() => HomePage());
+        Get.to(() => HomePage(user: user,));
 
       } else {
         Get.snackbar(
